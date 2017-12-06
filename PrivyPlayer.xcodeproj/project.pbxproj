@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FB5D04B33CD43263F9A1B24 /* Pods_PrivyPlayerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F200A11D0476DF7ED3FFD4 /* Pods_PrivyPlayerUITests.framework */; };
 		2F939B411FD7B67D005627CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F939B401FD7B67D005627CF /* AppDelegate.swift */; };
 		2F939B431FD7B67D005627CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F939B421FD7B67D005627CF /* ViewController.swift */; };
 		2F939B461FD7B67D005627CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F939B441FD7B67D005627CF /* Main.storyboard */; };
@@ -14,6 +15,9 @@
 		2F939B4B1FD7B67D005627CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F939B491FD7B67D005627CF /* LaunchScreen.storyboard */; };
 		2F939B561FD7B67D005627CF /* PrivyPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F939B551FD7B67D005627CF /* PrivyPlayerTests.swift */; };
 		2F939B611FD7B67D005627CF /* PrivyPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F939B601FD7B67D005627CF /* PrivyPlayerUITests.swift */; };
+		2F939B6F1FD7C224005627CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F939B6E1FD7C223005627CF /* GoogleService-Info.plist */; };
+		7A34FA87C5AE6D80B4320B85 /* Pods_PrivyPlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5890AB5332158A662DDA49D5 /* Pods_PrivyPlayerTests.framework */; };
+		A9FE2C68C203596B4FBE0DDF /* Pods_PrivyPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D2C939C6075BC66BFCB33A /* Pods_PrivyPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14F58BB7C28528AA7ACEA2E2 /* Pods-PrivyPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrivyPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrivyPlayer/Pods-PrivyPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		28F200A11D0476DF7ED3FFD4 /* Pods_PrivyPlayerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrivyPlayerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F939B3D1FD7B67D005627CF /* PrivyPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivyPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F939B401FD7B67D005627CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F939B421FD7B67D005627CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +53,15 @@
 		2F939B5C1FD7B67D005627CF /* PrivyPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrivyPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F939B601FD7B67D005627CF /* PrivyPlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivyPlayerUITests.swift; sourceTree = "<group>"; };
 		2F939B621FD7B67D005627CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F939B6E1FD7C223005627CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2F939B711FD7D53E005627CF /* ASPVideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ASPVideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5890AB5332158A662DDA49D5 /* Pods_PrivyPlayerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrivyPlayerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74D2C939C6075BC66BFCB33A /* Pods_PrivyPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrivyPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B3099AFF7FC56183664BCD /* Pods-PrivyPlayerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrivyPlayerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrivyPlayerTests/Pods-PrivyPlayerTests.release.xcconfig"; sourceTree = "<group>"; };
+		AD01F2E6450D9E9AD528CBF4 /* Pods-PrivyPlayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrivyPlayerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrivyPlayerUITests/Pods-PrivyPlayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EFBCC8123EE1FB4049A580F7 /* Pods-PrivyPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrivyPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrivyPlayer/Pods-PrivyPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		F122183999C0BA0A97AF0C4E /* Pods-PrivyPlayerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrivyPlayerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrivyPlayerUITests/Pods-PrivyPlayerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F2EB71DB5FFAFF16EDB5CEC9 /* Pods-PrivyPlayerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrivyPlayerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrivyPlayerTests/Pods-PrivyPlayerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9FE2C68C203596B4FBE0DDF /* Pods_PrivyPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A34FA87C5AE6D80B4320B85 /* Pods_PrivyPlayerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FB5D04B33CD43263F9A1B24 /* Pods_PrivyPlayerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +99,8 @@
 				2F939B541FD7B67D005627CF /* PrivyPlayerTests */,
 				2F939B5F1FD7B67D005627CF /* PrivyPlayerUITests */,
 				2F939B3E1FD7B67D005627CF /* Products */,
+				4BDAE10AF05713AF0E0E5EB5 /* Pods */,
+				3526EBB2D774961860F6AADC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +123,7 @@
 				2F939B471FD7B67D005627CF /* Assets.xcassets */,
 				2F939B491FD7B67D005627CF /* LaunchScreen.storyboard */,
 				2F939B4C1FD7B67D005627CF /* Info.plist */,
+				2F939B6E1FD7C223005627CF /* GoogleService-Info.plist */,
 			);
 			path = PrivyPlayer;
 			sourceTree = "<group>";
@@ -125,6 +146,30 @@
 			path = PrivyPlayerUITests;
 			sourceTree = "<group>";
 		};
+		3526EBB2D774961860F6AADC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F939B711FD7D53E005627CF /* ASPVideoPlayer.framework */,
+				74D2C939C6075BC66BFCB33A /* Pods_PrivyPlayer.framework */,
+				5890AB5332158A662DDA49D5 /* Pods_PrivyPlayerTests.framework */,
+				28F200A11D0476DF7ED3FFD4 /* Pods_PrivyPlayerUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4BDAE10AF05713AF0E0E5EB5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				14F58BB7C28528AA7ACEA2E2 /* Pods-PrivyPlayer.debug.xcconfig */,
+				EFBCC8123EE1FB4049A580F7 /* Pods-PrivyPlayer.release.xcconfig */,
+				F2EB71DB5FFAFF16EDB5CEC9 /* Pods-PrivyPlayerTests.debug.xcconfig */,
+				A2B3099AFF7FC56183664BCD /* Pods-PrivyPlayerTests.release.xcconfig */,
+				AD01F2E6450D9E9AD528CBF4 /* Pods-PrivyPlayerUITests.debug.xcconfig */,
+				F122183999C0BA0A97AF0C4E /* Pods-PrivyPlayerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +177,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F939B651FD7B67D005627CF /* Build configuration list for PBXNativeTarget "PrivyPlayer" */;
 			buildPhases = (
+				CB6D9783C7290A9B8C9B1687 /* [CP] Check Pods Manifest.lock */,
 				2F939B391FD7B67D005627CF /* Sources */,
 				2F939B3A1FD7B67D005627CF /* Frameworks */,
 				2F939B3B1FD7B67D005627CF /* Resources */,
+				4401EFC8C7C4DAF0AAE7CEC4 /* [CP] Embed Pods Frameworks */,
+				3CB65FD52E870E2FA53EB942 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +197,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F939B681FD7B67D005627CF /* Build configuration list for PBXNativeTarget "PrivyPlayerTests" */;
 			buildPhases = (
+				D33C16D2F9237CAA6C046199 /* [CP] Check Pods Manifest.lock */,
 				2F939B4D1FD7B67D005627CF /* Sources */,
 				2F939B4E1FD7B67D005627CF /* Frameworks */,
 				2F939B4F1FD7B67D005627CF /* Resources */,
+				225E7F49F5DAD22767FEB39B /* [CP] Embed Pods Frameworks */,
+				37AACEF26C4D334F3C83D2EE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +218,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F939B6B1FD7B67D005627CF /* Build configuration list for PBXNativeTarget "PrivyPlayerUITests" */;
 			buildPhases = (
+				88D4EEB4AE72F8931207BD46 /* [CP] Check Pods Manifest.lock */,
 				2F939B581FD7B67D005627CF /* Sources */,
 				2F939B591FD7B67D005627CF /* Frameworks */,
 				2F939B5A1FD7B67D005627CF /* Resources */,
+				6D02CE9AFB070B93FBE33203 /* [CP] Embed Pods Frameworks */,
+				40DF42CCF7A41DE468545018 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,6 +288,7 @@
 			files = (
 				2F939B4B1FD7B67D005627CF /* LaunchScreen.storyboard in Resources */,
 				2F939B481FD7B67D005627CF /* Assets.xcassets in Resources */,
+				2F939B6F1FD7C224005627CF /* GoogleService-Info.plist in Resources */,
 				2F939B461FD7B67D005627CF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +308,160 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		225E7F49F5DAD22767FEB39B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrivyPlayerTests/Pods-PrivyPlayerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37AACEF26C4D334F3C83D2EE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrivyPlayerTests/Pods-PrivyPlayerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3CB65FD52E870E2FA53EB942 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrivyPlayer/Pods-PrivyPlayer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40DF42CCF7A41DE468545018 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrivyPlayerUITests/Pods-PrivyPlayerUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4401EFC8C7C4DAF0AAE7CEC4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PrivyPlayer/Pods-PrivyPlayer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrivyPlayer/Pods-PrivyPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D02CE9AFB070B93FBE33203 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrivyPlayerUITests/Pods-PrivyPlayerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88D4EEB4AE72F8931207BD46 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PrivyPlayerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB6D9783C7290A9B8C9B1687 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PrivyPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D33C16D2F9237CAA6C046199 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PrivyPlayerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2F939B391FD7B67D005627CF /* Sources */ = {
@@ -369,6 +578,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -418,42 +628,48 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		2F939B661FD7B67D005627CF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14F58BB7C28528AA7ACEA2E2 /* Pods-PrivyPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XVB5V247FL;
 				INFOPLIST_FILE = PrivyPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = international.rst.com.rstsimplified.PrivyPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		2F939B671FD7B67D005627CF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFBCC8123EE1FB4049A580F7 /* Pods-PrivyPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XVB5V247FL;
 				INFOPLIST_FILE = PrivyPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = international.rst.com.rstsimplified.PrivyPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		2F939B691FD7B67D005627CF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2EB71DB5FFAFF16EDB5CEC9 /* Pods-PrivyPlayerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +687,7 @@
 		};
 		2F939B6A1FD7B67D005627CF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2B3099AFF7FC56183664BCD /* Pods-PrivyPlayerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,6 +705,7 @@
 		};
 		2F939B6C1FD7B67D005627CF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD01F2E6450D9E9AD528CBF4 /* Pods-PrivyPlayerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -504,6 +722,7 @@
 		};
 		2F939B6D1FD7B67D005627CF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F122183999C0BA0A97AF0C4E /* Pods-PrivyPlayerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
