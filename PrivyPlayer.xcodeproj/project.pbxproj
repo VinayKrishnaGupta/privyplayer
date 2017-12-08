@@ -247,6 +247,7 @@
 				TargetAttributes = {
 					2F939B3C1FD7B67D005627CF = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					2F939B501FD7B67D005627CF = {

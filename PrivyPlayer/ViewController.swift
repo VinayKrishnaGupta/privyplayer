@@ -46,7 +46,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func playvideo() {
         
         
-         let videoURL:URL = URL(string: "https://firebasestorage.googleapis.com/v0/b/mshmshtv-6e148.appspot.com/o/Haanikaarak%20Bapu%20-%20Dangal%20_%20Aamir%20Khan%20_%20Pritam%20_Amitabh%20B_%20Sarwar%20%26%20Sartaz%20Khan%20_%20New%20Song%202017%20-%20YouTube%20(360p).mp4?alt=media&token=0eacd77d-67e2-4852-b57b-f20a5be6cf13")!
+        let videoURL:URL = URL(string: "http://mshmsh.tv/videos/HaanikaarakBapu%20Dangal%20AamirKhan%20Pritam%20AmitabhB%20Sarwar%26SartazKhan%20NewSong2017%20YouTube(360p).mp4")!
         let player = AVPlayer(url: videoURL)
         player.allowsExternalPlayback = true
         let playerViewController = AVPlayerViewController()
@@ -58,7 +58,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
