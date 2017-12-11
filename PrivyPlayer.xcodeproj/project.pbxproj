@@ -8,9 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1FB5D04B33CD43263F9A1B24 /* Pods_PrivyPlayerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F200A11D0476DF7ED3FFD4 /* Pods_PrivyPlayerUITests.framework */; };
+		2F1540651FDAB69A005519EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F1540641FDAB69A005519EC /* Main.storyboard */; };
+		2F1540671FDE46F3005519EC /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1540661FDE46F3005519EC /* HomeTableViewController.swift */; };
+		2F1540691FDE4790005519EC /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1540681FDE4790005519EC /* Helpers.swift */; };
+		2F15406B1FDE479B005519EC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15406A1FDE479B005519EC /* TableViewCell.swift */; };
+		2F15406D1FDE6AB7005519EC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15406C1FDE6AB7005519EC /* SignInViewController.swift */; };
+		2F15406F1FDE6ACB005519EC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15406E1FDE6ACB005519EC /* SignUpViewController.swift */; };
+		2F1540711FDE6AE0005519EC /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F1540701FDE6AE0005519EC /* Auth.storyboard */; };
 		2F939B411FD7B67D005627CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F939B401FD7B67D005627CF /* AppDelegate.swift */; };
-		2F939B431FD7B67D005627CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F939B421FD7B67D005627CF /* ViewController.swift */; };
-		2F939B461FD7B67D005627CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F939B441FD7B67D005627CF /* Main.storyboard */; };
 		2F939B481FD7B67D005627CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F939B471FD7B67D005627CF /* Assets.xcassets */; };
 		2F939B4B1FD7B67D005627CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F939B491FD7B67D005627CF /* LaunchScreen.storyboard */; };
 		2F939B561FD7B67D005627CF /* PrivyPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F939B551FD7B67D005627CF /* PrivyPlayerTests.swift */; };
@@ -40,10 +45,15 @@
 /* Begin PBXFileReference section */
 		14F58BB7C28528AA7ACEA2E2 /* Pods-PrivyPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrivyPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrivyPlayer/Pods-PrivyPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		28F200A11D0476DF7ED3FFD4 /* Pods_PrivyPlayerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrivyPlayerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F1540641FDAB69A005519EC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2F1540661FDE46F3005519EC /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		2F1540681FDE4790005519EC /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		2F15406A1FDE479B005519EC /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		2F15406C1FDE6AB7005519EC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		2F15406E1FDE6ACB005519EC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		2F1540701FDE6AE0005519EC /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		2F939B3D1FD7B67D005627CF /* PrivyPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivyPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F939B401FD7B67D005627CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2F939B421FD7B67D005627CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2F939B451FD7B67D005627CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2F939B471FD7B67D005627CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F939B4A1FD7B67D005627CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F939B4C1FD7B67D005627CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,8 +128,13 @@
 			isa = PBXGroup;
 			children = (
 				2F939B401FD7B67D005627CF /* AppDelegate.swift */,
-				2F939B421FD7B67D005627CF /* ViewController.swift */,
-				2F939B441FD7B67D005627CF /* Main.storyboard */,
+				2F1540681FDE4790005519EC /* Helpers.swift */,
+				2F15406A1FDE479B005519EC /* TableViewCell.swift */,
+				2F1540641FDAB69A005519EC /* Main.storyboard */,
+				2F15406C1FDE6AB7005519EC /* SignInViewController.swift */,
+				2F15406E1FDE6ACB005519EC /* SignUpViewController.swift */,
+				2F1540701FDE6AE0005519EC /* Auth.storyboard */,
+				2F1540661FDE46F3005519EC /* HomeTableViewController.swift */,
 				2F939B471FD7B67D005627CF /* Assets.xcassets */,
 				2F939B491FD7B67D005627CF /* LaunchScreen.storyboard */,
 				2F939B4C1FD7B67D005627CF /* Info.plist */,
@@ -289,8 +304,9 @@
 			files = (
 				2F939B4B1FD7B67D005627CF /* LaunchScreen.storyboard in Resources */,
 				2F939B481FD7B67D005627CF /* Assets.xcassets in Resources */,
+				2F1540711FDE6AE0005519EC /* Auth.storyboard in Resources */,
 				2F939B6F1FD7C224005627CF /* GoogleService-Info.plist in Resources */,
-				2F939B461FD7B67D005627CF /* Main.storyboard in Resources */,
+				2F1540651FDAB69A005519EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,12 +394,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PrivyPlayer/Pods-PrivyPlayer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -469,7 +487,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F939B431FD7B67D005627CF /* ViewController.swift in Sources */,
+				2F15406F1FDE6ACB005519EC /* SignUpViewController.swift in Sources */,
+				2F1540671FDE46F3005519EC /* HomeTableViewController.swift in Sources */,
+				2F15406B1FDE479B005519EC /* TableViewCell.swift in Sources */,
+				2F1540691FDE4790005519EC /* Helpers.swift in Sources */,
+				2F15406D1FDE6AB7005519EC /* SignInViewController.swift in Sources */,
 				2F939B411FD7B67D005627CF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,14 +528,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2F939B441FD7B67D005627CF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2F939B451FD7B67D005627CF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2F939B491FD7B67D005627CF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
