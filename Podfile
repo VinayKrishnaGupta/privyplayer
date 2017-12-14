@@ -8,7 +8,8 @@ pod 'Firebase/Core'
 pod 'Firebase/Storage'
 pod 'Alamofire'
 pod 'SCLAlertView'
-  # Pods for PrivyPlayer
+pod 'SDWebImage', '~> 4.0'  
+# Pods for PrivyPlayer
 
   target 'PrivyPlayerTests' do
     inherit! :search_paths

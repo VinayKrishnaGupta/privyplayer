@@ -11,6 +11,7 @@ import AVFoundation
 import AVKit
 import Alamofire
 
+
 class HomeTableViewController: UITableViewController {
     var ResponseArray = Array<Any>()
     let model = generateRandomData()
@@ -57,7 +58,7 @@ class HomeTableViewController: UITableViewController {
     
     
     func SearchButtonMethod(){
-        print("Search Button Pressed")
+        self.performSegue(withIdentifier: "searchVC", sender: self)
         
     }
     
@@ -103,6 +104,17 @@ class HomeTableViewController: UITableViewController {
         tableViewCell.collectionViewOffset = storedOffsets[indexPath.section] ?? 0
     }
     
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+        view.tintColor = UIColor.black
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.groupTableViewBackground
+        header.textLabel?.text = self.tableView(tableView, titleForHeaderInSection: section)
+        header.textLabel?.font = UIFont(name: "Rubik", size: 16)
+        header.textLabel?.textAlignment = NSTextAlignment.left
+        
+        
+    }
+    
     override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         guard let tableViewCell = cell as? TableViewCell else { return }
@@ -133,6 +145,7 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
         let VideoURLfromAPI : String = dict.value(forKey: "url") as! String
         if let thumbnailImage = getThumbnailImage(forUrl: URL(string: VideoURLfromAPI)!) {
             cell.playbuttonImageView.image = thumbnailImage
+            
         }
         
         
@@ -168,6 +181,7 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
     func getThumbnailImage(forUrl url: URL) -> UIImage? {
         let asset: AVAsset = AVAsset(url: url)
         let imageGenerator = AVAssetImageGenerator(asset: asset)
+        
         
         do {
             let thumbnailImage = try imageGenerator.copyCGImage(at: CMTimeMake(1, 60) , actualTime: nil)

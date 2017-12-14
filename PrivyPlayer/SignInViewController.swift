@@ -52,7 +52,7 @@ class SignInViewController: UIViewController {
                     if type == "Success" {
                         SCLAlertView().showSuccess("Sucess", subTitle: "Successfully Logged In")
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-                        let vc = storyboard.instantiateViewController(withIdentifier: "HomeNav")
+                        let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBar")
                         self.present(vc, animated: true, completion: nil)
                     }
                     else {
