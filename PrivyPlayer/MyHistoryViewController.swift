@@ -1,8 +1,8 @@
 //
-//  SearchViewController.swift
+//  MyHistoryViewController.swift
 //  PrivyPlayer
 //
-//  Created by RSTI E-Services on 13/12/17.
+//  Created by RSTI E-Services on 15/12/17.
 //  Copyright © 2017 RSTI E-Services. All rights reserved.
 //
 
@@ -10,25 +10,27 @@ import UIKit
 import Alamofire
 import AVFoundation
 import AVKit
+import SDWebImage
 
-class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
-    @IBOutlet weak var searchBar: UISearchBar!
+class MyHistoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
-    
-    var is_searching = Bool()
     var dataArray = Array<Any>()
-    var searchingDataArray = NSMutableArray()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        searchBar.delegate = self
-       self.navigationItem.title = "Search"
-        tableView.isHidden = true
+        self.navigationItem.title = "My History"
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.GetHistory()
+        
+        
+    }
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         if dataArray.count>0 {
             return dataArray.count
@@ -43,23 +45,30 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = "Hello Vinay"
+        
         if dataArray.count>0 {
             let dict : NSDictionary = dataArray[indexPath.section] as! NSDictionary
-            let title : String = dict.value(forKeyPath: "title") as! String
+            let title : String = dict.value(forKeyPath: "video name") as! String
             cell.textLabel?.text = title
-            let VideoURL: String = dict.value(forKey: "url") as! String
+            let VideoURL: String = dict.value(forKey: "video url") as! String
             cell.imageView?.image = UIImage.init(named: "video-player")
+            
             
             DispatchQueue.global(qos: .userInitiated).async {
                 let thumbnailImage = self.getThumbnailImage(forUrl: URL(string: VideoURL)!)
                 
                 DispatchQueue.main.async {
                     cell.imageView?.image = thumbnailImage
-                    cell.reloadInputViews()
+                    
+                    
                 }
             }
-
+            
+            
+            cell.layer.cornerRadius = 5
+            cell.layer.masksToBounds = true
+            cell.layer.borderWidth = 1
+            cell.layer.borderColor = UIColor.lightGray.cgColor
             
             
         }
@@ -70,39 +79,35 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dict : NSDictionary = dataArray[indexPath.section] as! NSDictionary
-        let VideoURL: String = dict.value(forKey: "url") as! String
+        let VideoURL: String = dict.value(forKey: "video url") as! String
         self.playvideo(VideoURL: VideoURL)
         
         
     }
     
     
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
-//        if (searchBar.text?.isEmpty)!{
-//            is_searching = false
-//            tableView.reloadData()
-//        } else {
-//
-//            print(searchBar.text)
-//
-//            is_searching = true
-//            searchingDataArray.removeAllObjects()
-//
-//            tableView.reloadData()
-//        }
-//    }
+    //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
+    //        if (searchBar.text?.isEmpty)!{
+    //            is_searching = false
+    //            tableView.reloadData()
+    //        } else {
+    //
+    //            print(searchBar.text)
+    //
+    //            is_searching = true
+    //            searchingDataArray.removeAllObjects()
+    //
+    //            tableView.reloadData()
+    //        }
+    //    }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        print("Search Button Clicked")
-        self.searchButtonMethod()
-    }
     
-    func searchButtonMethod() {
+    
+    func GetHistory() {
         
-        let searchquery : String = self.searchBar.text!
+        let UserID : String = "1"
         
-        Alamofire.request("http://mshmsh.tv/search.php", method: .post, parameters: ["name":searchquery], headers:nil)
+        Alamofire.request("http://mshmsh.tv/get_history.php", method: .post, parameters: ["user_id":UserID], headers:nil)
             .responseJSON { response in
                 debugPrint(response)
                 
@@ -113,10 +118,10 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     let type : String = dict.value(forKeyPath: "response.type") as! String
                     if type == "success" {
                         
-                        self.dataArray = dict.value(forKeyPath: "values") as! [Any]
+                        self.dataArray = dict.value(forKeyPath: "response.message") as! [Any]
                         
-                          self.tableView.isHidden = false
-                          self.tableView.reloadData()
+                        self.tableView.isHidden = false
+                        self.tableView.reloadData()
                     }
                     else {
                         print("No Video found")
@@ -126,7 +131,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     
                     
                     
-                  
+                    
                 }
                 else {
                     
@@ -177,15 +182,16 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
+

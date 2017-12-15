@@ -143,11 +143,17 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
         let dict : NSDictionary = VideoList[indexPath.row] as! NSDictionary
         cell.videotitleLabel.text = dict.value(forKey: "title") as! String
         let VideoURLfromAPI : String = dict.value(forKey: "url") as! String
-        if let thumbnailImage = getThumbnailImage(forUrl: URL(string: VideoURLfromAPI)!) {
-            cell.playbuttonImageView.image = thumbnailImage
-            
+       
+        DispatchQueue.global(qos: .userInitiated).async {
+            let thumbnailImage = self.getThumbnailImage(forUrl: URL(string: VideoURLfromAPI)!)
+           
+            DispatchQueue.main.async {
+                cell.playbuttonImageView.image = thumbnailImage
+            }
         }
+
         
+       
         
         
         return cell

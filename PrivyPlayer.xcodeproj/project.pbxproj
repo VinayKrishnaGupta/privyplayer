@@ -20,6 +20,8 @@
 		2F18157A1FE14A2900EDD682 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1815791FE14A2900EDD682 /* VideoCollectionViewCell.swift */; };
 		2F18157C1FE2516E00EDD682 /* AppDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F18157B1FE2516E00EDD682 /* AppDataManager.swift */; };
 		2F1815821FE2A5A800EDD682 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1815811FE2A5A800EDD682 /* MainTabBarController.m */; };
+		2F1815871FE3C1E800EDD682 /* MyHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1815861FE3C1E800EDD682 /* MyHistoryViewController.swift */; };
+		2F1815891FE3EBB300EDD682 /* recentuploadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1815881FE3EBB300EDD682 /* recentuploadsViewController.swift */; };
 		2F939B411FD7B67D005627CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F939B401FD7B67D005627CF /* AppDelegate.swift */; };
 		2F939B481FD7B67D005627CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F939B471FD7B67D005627CF /* Assets.xcassets */; };
 		2F939B4B1FD7B67D005627CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F939B491FD7B67D005627CF /* LaunchScreen.storyboard */; };
@@ -64,6 +66,8 @@
 		2F18157F1FE2A5A800EDD682 /* PrivyPlayer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrivyPlayer-Bridging-Header.h"; sourceTree = "<group>"; };
 		2F1815801FE2A5A800EDD682 /* MainTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		2F1815811FE2A5A800EDD682 /* MainTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		2F1815861FE3C1E800EDD682 /* MyHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHistoryViewController.swift; sourceTree = "<group>"; };
+		2F1815881FE3EBB300EDD682 /* recentuploadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recentuploadsViewController.swift; sourceTree = "<group>"; };
 		2F939B3D1FD7B67D005627CF /* PrivyPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivyPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F939B401FD7B67D005627CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F939B471FD7B67D005627CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 				2F1540701FDE6AE0005519EC /* Auth.storyboard */,
 				2F1540661FDE46F3005519EC /* HomeTableViewController.swift */,
 				2F1815731FE101EC00EDD682 /* SearchViewController.swift */,
+				2F1815861FE3C1E800EDD682 /* MyHistoryViewController.swift */,
+				2F1815881FE3EBB300EDD682 /* recentuploadsViewController.swift */,
 				2F939B471FD7B67D005627CF /* Assets.xcassets */,
 				2F939B491FD7B67D005627CF /* LaunchScreen.storyboard */,
 				2F939B4C1FD7B67D005627CF /* Info.plist */,
@@ -511,6 +517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F1815891FE3EBB300EDD682 /* recentuploadsViewController.swift in Sources */,
 				2F15406F1FDE6ACB005519EC /* SignUpViewController.swift in Sources */,
 				2F1815741FE101EC00EDD682 /* SearchViewController.swift in Sources */,
 				2F1540671FDE46F3005519EC /* HomeTableViewController.swift in Sources */,
@@ -519,6 +526,7 @@
 				2F15406D1FDE6AB7005519EC /* SignInViewController.swift in Sources */,
 				2F1815821FE2A5A800EDD682 /* MainTabBarController.m in Sources */,
 				2F18157A1FE14A2900EDD682 /* VideoCollectionViewCell.swift in Sources */,
+				2F1815871FE3C1E800EDD682 /* MyHistoryViewController.swift in Sources */,
 				2F939B411FD7B67D005627CF /* AppDelegate.swift in Sources */,
 				2F18157C1FE2516E00EDD682 /* AppDataManager.swift in Sources */,
 			);

@@ -50,7 +50,7 @@ class SignInViewController: UIViewController {
                     let type : String = dict.value(forKeyPath: "Response.data.type") as! String
                     let message: String = dict.value(forKeyPath: "Response.data.message") as! String
                     if type == "Success" {
-                        SCLAlertView().showSuccess("Sucess", subTitle: "Successfully Logged In")
+                        SCLAlertView().showSuccess("Success", subTitle: "Successfully Logged In")
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                         let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBar")
                         self.present(vc, animated: true, completion: nil)
