@@ -23,9 +23,9 @@
     UITabBarItem *tabBarItem4 = [tabBar.items objectAtIndex:3];
     
     tabBarItem1.title = @"Home";
-    tabBarItem2.title = @"History";
-    tabBarItem3.title = @"Recent";
-    tabBarItem4.title = @"More";
+    tabBarItem2.title = @"My History";
+    tabBarItem3.title = @"Recent Uploads";
+    tabBarItem4.title = @"Request Video";
     UIImage *image1 = [[UIImage imageNamed:@"homeicon.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     

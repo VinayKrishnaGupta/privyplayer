@@ -147,8 +147,9 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
         DispatchQueue.global(qos: .userInitiated).async {
             let thumbnailImage = self.getThumbnailImage(forUrl: URL(string: VideoURLfromAPI)!)
            
-            DispatchQueue.main.async {
+            DispatchQueue.main.sync {
                 cell.playbuttonImageView.image = thumbnailImage
+                cell.reloadInputViews()
             }
         }
 

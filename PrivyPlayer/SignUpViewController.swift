@@ -26,6 +26,13 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func signUpButton(_ sender: UIButton) {
+        if (fullNameTextField.text?.isEmpty)! || (emailTextField.text?.isEmpty)! || (passwordTextField.text?.isEmpty)! {
+            SCLAlertView().showError("Error", subTitle: "All Fields are Mandetory")
+        }
+        else {
+           self.SignupMethod()
+        }
+        
         
         
     }
