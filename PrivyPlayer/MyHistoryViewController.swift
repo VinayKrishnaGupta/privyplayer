@@ -11,6 +11,7 @@ import Alamofire
 import AVFoundation
 import AVKit
 import SDWebImage
+import SCLAlertView
 
 class MyHistoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
@@ -26,6 +27,16 @@ class MyHistoryViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.GetHistory()
+        
+        let searchButton = UIBarButtonItem.init(image: UIImage.init(named: "searchIcon"), style: .done, target: self, action: #selector(SearchButtonMethod))
+        self.navigationItem.rightBarButtonItem = searchButton
+        
+    }
+    func SearchButtonMethod(){
+        // self.performSegue(withIdentifier: "searchVC", sender: self)
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SearchVC")
+        self.navigationController?.pushViewController(vc, animated: true)
         
         
     }
@@ -48,17 +59,20 @@ class MyHistoryViewController: UIViewController, UITableViewDataSource, UITableV
         
         if dataArray.count>0 {
             let dict : NSDictionary = dataArray[indexPath.section] as! NSDictionary
-            let title : String = dict.value(forKeyPath: "video name") as! String
+            let title : String = dict.value(forKeyPath: "video title") as! String
             cell.textLabel?.text = title
             let VideoURL: String = dict.value(forKey: "video url") as! String
             cell.imageView?.image = UIImage.init(named: "video-player")
-            
+            cell.tag = indexPath.section
             
             DispatchQueue.global(qos: .userInitiated).async {
                 let thumbnailImage = self.getThumbnailImage(forUrl: URL(string: VideoURL)!)
                 
                 DispatchQueue.main.async {
-                    cell.imageView?.image = thumbnailImage
+                    if (cell.tag == indexPath.section) {
+                        cell.imageView?.image = thumbnailImage
+                    }
+                    
                     
                     
                 }
@@ -105,9 +119,9 @@ class MyHistoryViewController: UIViewController, UITableViewDataSource, UITableV
     
     func GetHistory() {
         
-        let UserID : String = "1"
+        let userID : String = UserDefaults.standard.value(forKey: "UserID") as! String
         
-        Alamofire.request("http://mshmsh.tv/get_history.php", method: .post, parameters: ["user_id":UserID], headers:nil)
+        Alamofire.request("http://gig.gs/get_history.php", method: .post, parameters: ["user_id":userID], headers:nil)
             .responseJSON { response in
                 debugPrint(response)
                 
@@ -126,7 +140,7 @@ class MyHistoryViewController: UIViewController, UITableViewDataSource, UITableV
                     else {
                         print("No Video found")
                         self.tableView.isHidden = true
-                        
+                        SCLAlertView().showError("No Videos Found", subTitle: "Please watch Videos to see your history")
                     }
                     
                     

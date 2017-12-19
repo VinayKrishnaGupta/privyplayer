@@ -14,10 +14,26 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        if UserDefaults.standard.value(forKey: "UserID") != nil {
+            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBar")
+            self.present(vc, animated: true, completion: nil)
+        }
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +42,14 @@ class SignInViewController: UIViewController {
     }
     @IBAction func SignInButton(_ sender: Any) {
         
-        self.SigninMethod()
+        if (emailTextField.text?.isEmpty)! || (passwordTextField.text?.isEmpty)! {
+            SCLAlertView().showError("Error", subTitle: "All Fields are Mandetory")
+        }
+        else {
+             self.SigninMethod()
+        }
+        
+       
         
         
         
@@ -39,7 +62,7 @@ class SignInViewController: UIViewController {
         
         let parameter1 : Parameters  = ["email_id" : username , "password": password] as Parameters
         
-      Alamofire.request("http://mshmsh.tv/login.php", method: .post, parameters: parameter1, headers: nil)
+      Alamofire.request("http://gig.gs/login.php", method: .post, parameters: parameter1, headers: nil)
         .responseJSON { response in
                 debugPrint(response)
                 
@@ -50,6 +73,11 @@ class SignInViewController: UIViewController {
                     let type : String = dict.value(forKeyPath: "Response.data.type") as! String
                     let message: String = dict.value(forKeyPath: "Response.data.message") as! String
                     if type == "Success" {
+                        
+                        let userID = dict.value(forKeyPath: "Response.data.user_id")
+                        UserDefaults.standard.set(userID, forKey: "UserID")
+                        UserDefaults.standard.synchronize()
+                        
                         SCLAlertView().showSuccess("Success", subTitle: "Successfully Logged In")
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                         let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBar")

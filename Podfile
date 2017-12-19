@@ -9,6 +9,7 @@ pod 'Firebase/Storage'
 pod 'Alamofire'
 pod 'SCLAlertView'
 pod 'SDWebImage', '~> 4.0'  
+pod 'Google-Mobile-Ads-SDK'
 # Pods for PrivyPlayer
 
   target 'PrivyPlayerTests' do

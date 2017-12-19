@@ -17,8 +17,27 @@ class RequestVideoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        let searchButton = UIBarButtonItem.init(image: UIImage.init(named: "searchIcon"), style: .done, target: self, action: #selector(SearchButtonMethod))
+        self.navigationItem.rightBarButtonItem = searchButton
+        
+        
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
+    func SearchButtonMethod(){
+        // self.performSegue(withIdentifier: "searchVC", sender: self)
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SearchVC")
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -36,7 +55,7 @@ class RequestVideoViewController: UIViewController {
             let VideoCategory : String = self.VideoCategoryTextField.text!
             
             let parameter = ["video_title": VideoTitle, "user_id":UserID, "video_category": VideoCategory ]
-            Alamofire.request("http://mshmsh.tv/request_video.php", method: .post, parameters: parameter, headers:nil)
+            Alamofire.request("http://gig.gs/request_video.php", method: .post, parameters: parameter, headers:nil)
                 .responseJSON { response in
                     debugPrint(response)
                     
@@ -46,7 +65,8 @@ class RequestVideoViewController: UIViewController {
                         print(dict)
                         let type : String = dict.value(forKeyPath: "response.type") as! String
                         if type == "success" {
-                            
+                            self.videoTitleTextField.text = nil
+                            self.VideoCategoryTextField.text = nil
                              SCLAlertView().showSuccess("Success", subTitle: "We have received your request and Notify You on video Upload")
                             
                             

@@ -14,11 +14,16 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    let MySCLView = SCLAlertView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +35,7 @@ class SignUpViewController: UIViewController {
             SCLAlertView().showError("Error", subTitle: "All Fields are Mandetory")
         }
         else {
+            MySCLView.showWait("Please Wait..", subTitle: "We are Registering your account")
            self.SignupMethod()
         }
         
@@ -46,7 +52,50 @@ class SignUpViewController: UIViewController {
         
         let parameter1 : Parameters  = ["email_id" : username , "password": password, "uname":Fullname] as Parameters
         
-        Alamofire.request("http://mshmsh.tv/signUp.php", method: .post, parameters: parameter1, headers: nil)
+        Alamofire.request("http://gig.gs/signUp.php", method: .post, parameters: parameter1, headers: nil)
+            .responseJSON { response in
+                debugPrint(response)
+               
+                
+                if let json = response.result.value {
+                    let dict = json as! NSDictionary
+                    print(dict)
+                    let type : String = dict.value(forKeyPath: "Response.data.type") as! String
+                    let message: String = dict.value(forKeyPath: "Response.data.message") as! String
+                    if type == "Success" {
+                        self.SigninMethod()
+                    }
+                    else {
+                        SCLAlertView().showError("Error", subTitle: message)
+                        self.MySCLView.hideView()
+                    }
+                    
+                    
+                    
+                    
+                }
+                else {
+                    SCLAlertView().showError("Error", subTitle: "Failed")
+                    
+                    
+                    
+                    print("Error")
+                }
+                
+        }
+        
+    }
+    
+
+    
+    func SigninMethod() {
+        
+        let username: String = self.emailTextField.text!
+        let password : String = self.passwordTextField.text!
+        
+        let parameter1 : Parameters  = ["email_id" : username , "password": password] as Parameters
+        
+        Alamofire.request("http://gig.gs/login.php", method: .post, parameters: parameter1, headers: nil)
             .responseJSON { response in
                 debugPrint(response)
                 
@@ -57,6 +106,11 @@ class SignUpViewController: UIViewController {
                     let type : String = dict.value(forKeyPath: "Response.data.type") as! String
                     let message: String = dict.value(forKeyPath: "Response.data.message") as! String
                     if type == "Success" {
+                        self.MySCLView.hideView()
+                        let userID = dict.value(forKeyPath: "Response.data.user_id")
+                        UserDefaults.standard.set(userID, forKey: "UserID")
+                        UserDefaults.standard.synchronize()
+                        
                         SCLAlertView().showSuccess("Success", subTitle: "Successfully Logged In")
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
                         let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBar")
@@ -65,9 +119,6 @@ class SignUpViewController: UIViewController {
                     else {
                         SCLAlertView().showError("Error", subTitle: message)
                     }
-                    
-                    
-                    
                     
                 }
                 else {
@@ -80,9 +131,11 @@ class SignUpViewController: UIViewController {
                 
         }
         
+        
+        
+        
     }
     
-
     /*
     // MARK: - Navigation
 

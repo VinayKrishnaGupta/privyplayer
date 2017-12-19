@@ -10,10 +10,13 @@ import UIKit
 import Alamofire
 import AVFoundation
 import AVKit
+import GoogleMobileAds
+import SCLAlertView
 
-class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, GADInterstitialDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+     var interstitial: GADInterstitial!
     
     var is_searching = Bool()
     var dataArray = Array<Any>()
@@ -27,7 +30,23 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         searchBar.delegate = self
        self.navigationItem.title = "Search"
         tableView.isHidden = true
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-1388255702174478/2655077021")
+        let request = GADRequest()
+        interstitial.load(request)
+        interstitial = createAndLoadInterstitial()
+        try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: [])
         // Do any additional setup after loading the view.
+    }
+    
+    func createAndLoadInterstitial() -> GADInterstitial {
+        var interstitial = GADInterstitial(adUnitID: "ca-app-pub-1388255702174478/2655077021")
+        interstitial.delegate = self
+        interstitial.load(GADRequest())
+        return interstitial
+    }
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        interstitial = createAndLoadInterstitial()
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         if dataArray.count>0 {
@@ -50,11 +69,16 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             cell.textLabel?.text = title
             let VideoURL: String = dict.value(forKey: "url") as! String
             cell.imageView?.image = UIImage.init(named: "video-player")
+            cell.layer.cornerRadius = 5
+            cell.layer.masksToBounds = true
+            cell.layer.borderWidth = 1
+            cell.layer.borderColor = UIColor.lightGray.cgColor
+            
             
             DispatchQueue.global(qos: .userInitiated).async {
                 let thumbnailImage = self.getThumbnailImage(forUrl: URL(string: VideoURL)!)
                 
-                DispatchQueue.main.async {
+                DispatchQueue.main.sync {
                     cell.imageView?.image = thumbnailImage
                     cell.reloadInputViews()
                 }
@@ -102,7 +126,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         
         let searchquery : String = self.searchBar.text!
         
-        Alamofire.request("http://mshmsh.tv/search.php", method: .post, parameters: ["name":searchquery], headers:nil)
+        Alamofire.request("http://gig.gs/search.php", method: .post, parameters: ["name":searchquery], headers:nil)
             .responseJSON { response in
                 debugPrint(response)
                 
@@ -120,6 +144,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     }
                     else {
                         print("No Video found")
+                        SCLAlertView().showError("No Video Found", subTitle: "Please Try Something Else or Let Us Know in Request Section")
                         self.tableView.isHidden = true
                         
                     }
@@ -150,6 +175,16 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         playerViewController.player = player
         self.present(playerViewController, animated: true) {
             playerViewController.player!.play()
+            
+            if self.interstitial.isReady {
+                playerViewController.player!.pause()
+                self.interstitial.present(fromRootViewController: playerViewController)
+                //self.interstitial.present(fromRootViewController: self)
+            } else {
+                print("Ad wasn't ready")
+                
+                
+            }
         }
         
     }

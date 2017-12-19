@@ -26,6 +26,16 @@ class recentuploadsViewController: UIViewController, UITableViewDataSource, UITa
         super.viewWillAppear(true)
         self.GetHistory()
         
+        let searchButton = UIBarButtonItem.init(image: UIImage.init(named: "searchIcon"), style: .done, target: self, action: #selector(SearchButtonMethod))
+        self.navigationItem.rightBarButtonItem = searchButton
+        
+    }
+    func SearchButtonMethod(){
+        // self.performSegue(withIdentifier: "searchVC", sender: self)
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SearchVC")
+        self.navigationController?.pushViewController(vc, animated: true)
+        
         
     }
     
@@ -47,17 +57,21 @@ class recentuploadsViewController: UIViewController, UITableViewDataSource, UITa
         
         if dataArray.count>0 {
             let dict : NSDictionary = dataArray[indexPath.section] as! NSDictionary
-            let title : String = dict.value(forKeyPath: "video name") as! String
+            let title : String = dict.value(forKeyPath: "video title") as! String
             cell.textLabel?.text = title
             let VideoURL: String = dict.value(forKey: "video url") as! String
-            cell.imageView?.image = UIImage.init(named: "video-player")
+           cell.imageView?.image = UIImage.init(named: "video-player")
+            cell.tag = indexPath.section
+            
             
             
             DispatchQueue.global(qos: .userInitiated).async {
                 let thumbnailImage = self.getThumbnailImage(forUrl: URL(string: VideoURL)!)
                 
                 DispatchQueue.main.async {
-                    cell.imageView?.image = thumbnailImage
+                    if (cell.tag == indexPath.section) {
+                        cell.imageView?.image = thumbnailImage
+                    }
                 }
             }
             
@@ -102,9 +116,9 @@ class recentuploadsViewController: UIViewController, UITableViewDataSource, UITa
     
     func GetHistory() {
         
-        let UserID : String = "1"
+      
         
-        Alamofire.request("http://mshmsh.tv/recant_video.php", method: .post, parameters: nil, headers:nil)
+        Alamofire.request("http://gig.gs/recant_video.php", method: .post, parameters: nil, headers:nil)
             .responseJSON { response in
                 debugPrint(response)
                 
