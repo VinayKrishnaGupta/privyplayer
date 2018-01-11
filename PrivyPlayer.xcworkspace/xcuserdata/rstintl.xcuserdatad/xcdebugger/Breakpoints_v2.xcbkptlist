@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PrivyPlayer/SignInViewController.swift"
-            timestampString = "535378346.806262"
+            timestampString = "535380870.176581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PrivyPlayer/HomeTableViewController.swift"
-            timestampString = "535378346.806497"
+            timestampString = "537293211.170523"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
             landmarkName = "playerDidFinishPlaying()"
             landmarkType = "7">
          </BreakpointContent>

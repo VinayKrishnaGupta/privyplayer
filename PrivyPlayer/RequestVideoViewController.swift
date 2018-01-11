@@ -25,6 +25,11 @@ class RequestVideoViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
+    
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
     func SearchButtonMethod(){
         // self.performSegue(withIdentifier: "searchVC", sender: self)
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
@@ -33,11 +38,6 @@ class RequestVideoViewController: UIViewController {
         
         
     }
-    
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

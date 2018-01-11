@@ -33,7 +33,9 @@ class HomeTableViewController: UITableViewController, GADInterstitialDelegate{
 
         
         let searchButton = UIBarButtonItem.init(image: UIImage.init(named: "searchIcon"), style: .done, target: self, action: #selector(SearchButtonMethod))
-        self.navigationItem.rightBarButtonItem = searchButton
+        let uploadButton = UIBarButtonItem.init(image: UIImage.init(named: "videoUpload"), style: .done, target: self, action: #selector(upLoadButtonMethod))
+      //  self.navigationItem.rightBarButtonItem = searchButton
+        self.navigationItem.rightBarButtonItems = [uploadButton, searchButton]
     
         
     }
@@ -75,6 +77,9 @@ class HomeTableViewController: UITableViewController, GADInterstitialDelegate{
         self.navigationController?.pushViewController(vc, animated: true)
         
         
+    }
+    func upLoadButtonMethod(){
+        print("uploadButton")
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -164,10 +169,10 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
         DispatchQueue.global(qos: .userInitiated).async {
             let thumbnailImage = self.getThumbnailImage(forUrl: URL(string: VideoURLfromAPI)!)
            
-            DispatchQueue.main.sync() {
+            DispatchQueue.main.async() {
                 if cell.tag == (indexPath.row)*101 {
                      cell.playbuttonImageView.image = thumbnailImage
-                    cell.reloadInputViews()
+                    
                     
                 }
                
