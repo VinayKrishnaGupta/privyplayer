@@ -10,6 +10,8 @@ pod 'Alamofire'
 pod 'SCLAlertView'
 pod 'SDWebImage', '~> 4.0'  
 pod 'Google-Mobile-Ads-SDK'
+#pod 'ASPVideoPlayer', '~> 3.0.1'
+pod 'JPVideoPlayer', '~> 2.4.0'
 # Pods for PrivyPlayer
 
   target 'PrivyPlayerTests' do

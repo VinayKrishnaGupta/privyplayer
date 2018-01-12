@@ -12,6 +12,9 @@ import AVKit
 import Alamofire
 import SCLAlertView
 import GoogleMobileAds
+import JPVideoPlayer
+
+
 
 
 class HomeTableViewController: UITableViewController, GADInterstitialDelegate{
@@ -24,7 +27,7 @@ class HomeTableViewController: UITableViewController, GADInterstitialDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-1388255702174478/2655077021")
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544")
         let request = GADRequest()
         interstitial.load(request)
         interstitial = createAndLoadInterstitial()
@@ -165,7 +168,11 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
         let CellTitle : String = dict.value(forKey: "title") as! String
         cell.videotitleLabel.text = CellTitle
         let VideoURLfromAPI : String = dict.value(forKey: "url") as! String
-       
+        
+//         let videoURL:URL = URL(string: VideoURLfromAPI)!
+//        cell.playbuttonImageView.jp_playVideo(with: videoURL)
+//
+        
         DispatchQueue.global(qos: .userInitiated).async {
             let thumbnailImage = self.getThumbnailImage(forUrl: URL(string: VideoURLfromAPI)!)
            
@@ -188,7 +195,9 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func createAndLoadInterstitial() -> GADInterstitial {
-        var interstitial = GADInterstitial(adUnitID: "ca-app-pub-1388255702174478/2655077021")
+        var interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544")
+        //ca-app-pub-3940256099942544 : test
+        //ca-app-pub-1388255702174478/2655077021 : prod
         interstitial.delegate = self
         interstitial.load(GADRequest())
         return interstitial
@@ -206,7 +215,8 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
         let VideoList : Array<Any> = Category.value(forKey: "videos") as! Array<Any>
         let dict : NSDictionary = VideoList[indexPath.row] as! NSDictionary
         let VideoURLfromAPI : String = dict.value(forKey: "url") as! String
-        self.playvideo(VideoURL: VideoURLfromAPI)
+       self.playvideo(VideoURL: VideoURLfromAPI)
+      //  self.playvideo1(VideoURL: VideoURLfromAPI)
 
          DispatchQueue.global(qos: .userInitiated).async {
         
@@ -240,8 +250,17 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
         
         
         let videoURL:URL = URL(string: VideoURL)!
-        let player = AVPlayer(url: videoURL)
+        let playerItem = CachingPlayerItem(url: videoURL)
+        
+        let player = AVPlayer(playerItem: playerItem)
+        if #available(iOS 10.0, *) {
+            player.automaticallyWaitsToMinimizeStalling = false
+        } else {
+            // Fallback on earlier versions
+        }
+      
         player.allowsExternalPlayback = true
+    //    player.appliesMediaSelectionCriteriaAutomatically = true
          NotificationCenter.default.addObserver(self,selector: #selector(self.playerDidFinishPlaying), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player)
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
@@ -250,21 +269,28 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
             playerViewController.player!.play()
            
 
-            if self.interstitial.isReady {
-               playerViewController.player!.pause()
-                self.interstitial.present(fromRootViewController: playerViewController)
-                //self.interstitial.present(fromRootViewController: self)
-            } else {
-                print("Ad wasn't ready")
-                
-                
-            }
+//            if self.interstitial.isReady {
+//               playerViewController.player!.pause()
+//                self.interstitial.present(fromRootViewController: playerViewController)
+//
+//            } else {
+//                print("Ad wasn't ready")
+//
+//            }
             
           
         }
         
     }
     
+    
+     func playvideo1(VideoURL:String) {
+        let videoURL:URL = URL(string: VideoURL)!
+        
+        
+        
+        
+    }
     
    func playerDidFinishPlaying() {
         print("Video End")
