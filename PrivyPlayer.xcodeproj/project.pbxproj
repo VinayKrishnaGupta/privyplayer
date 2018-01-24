@@ -23,6 +23,16 @@
 		2F1815871FE3C1E800EDD682 /* MyHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1815861FE3C1E800EDD682 /* MyHistoryViewController.swift */; };
 		2F1815891FE3EBB300EDD682 /* recentuploadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1815881FE3EBB300EDD682 /* recentuploadsViewController.swift */; };
 		2F18158B1FE6A0C400EDD682 /* RequestVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F18158A1FE6A0C400EDD682 /* RequestVideoViewController.swift */; };
+		2F616BCF20174BE5001074D9 /* PlayerVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F616BCE20174BE5001074D9 /* PlayerVideoViewController.swift */; };
+		2F616BD120174C74001074D9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F616BD020174C74001074D9 /* AVFoundation.framework */; };
+		2F616BD320174C79001074D9 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F616BD220174C79001074D9 /* AVKit.framework */; };
+		2F616BD520174C84001074D9 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F616BD420174C83001074D9 /* VideoToolbox.framework */; };
+		2F616BD720174C8A001074D9 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F616BD620174C8A001074D9 /* CoreVideo.framework */; };
+		2F616BD920174C90001074D9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F616BD820174C90001074D9 /* AudioToolbox.framework */; };
+		2F616BDB20174C96001074D9 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F616BDA20174C95001074D9 /* CoreAudio.framework */; };
+		2F616BDD20174C9E001074D9 /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F616BDC20174C9E001074D9 /* CoreAudioKit.framework */; };
+		2F616BDF20174CA9001074D9 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F616BDE20174CA9001074D9 /* MediaPlayer.framework */; };
+		2F616BE22017586F001074D9 /* PlayerVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F616BE12017586F001074D9 /* PlayerVideoVC.m */; };
 		2F901BDE2007CB7100BC86A5 /* CachingPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F901BDD2007CB7100BC86A5 /* CachingPlayerItem.swift */; };
 		2F939B411FD7B67D005627CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F939B401FD7B67D005627CF /* AppDelegate.swift */; };
 		2F939B481FD7B67D005627CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F939B471FD7B67D005627CF /* Assets.xcassets */; };
@@ -71,6 +81,24 @@
 		2F1815861FE3C1E800EDD682 /* MyHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHistoryViewController.swift; sourceTree = "<group>"; };
 		2F1815881FE3EBB300EDD682 /* recentuploadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recentuploadsViewController.swift; sourceTree = "<group>"; };
 		2F18158A1FE6A0C400EDD682 /* RequestVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestVideoViewController.swift; sourceTree = "<group>"; };
+		2F616BCE20174BE5001074D9 /* PlayerVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVideoViewController.swift; sourceTree = "<group>"; };
+		2F616BD020174C74001074D9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2F616BD220174C79001074D9 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		2F616BD420174C83001074D9 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		2F616BD620174C8A001074D9 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		2F616BD820174C90001074D9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		2F616BDA20174C95001074D9 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		2F616BDC20174C9E001074D9 /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
+		2F616BDE20174CA9001074D9 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		2F616BE02017586F001074D9 /* PlayerVideoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerVideoVC.h; sourceTree = "<group>"; };
+		2F616BE12017586F001074D9 /* PlayerVideoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerVideoVC.m; sourceTree = "<group>"; };
+		2F616BE820175A11001074D9 /* DTCoreText.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DTCoreText.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F616BE920175A11001074D9 /* DTFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DTFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F616BEA20175A11001074D9 /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Reachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F616BEB20175A11001074D9 /* VKFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VKFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F616BEC20175A11001074D9 /* VKVideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VKVideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F616BEF201763B9001074D9 /* VKFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VKFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F616BF0201763B9001074D9 /* VKVideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VKVideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F901BDD2007CB7100BC86A5 /* CachingPlayerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachingPlayerItem.swift; sourceTree = "<group>"; };
 		2F939B3D1FD7B67D005627CF /* PrivyPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivyPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F939B401FD7B67D005627CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +127,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F616BDF20174CA9001074D9 /* MediaPlayer.framework in Frameworks */,
+				2F616BDD20174C9E001074D9 /* CoreAudioKit.framework in Frameworks */,
+				2F616BDB20174C96001074D9 /* CoreAudio.framework in Frameworks */,
+				2F616BD920174C90001074D9 /* AudioToolbox.framework in Frameworks */,
+				2F616BD720174C8A001074D9 /* CoreVideo.framework in Frameworks */,
+				2F616BD520174C84001074D9 /* VideoToolbox.framework in Frameworks */,
+				2F616BD320174C79001074D9 /* AVKit.framework in Frameworks */,
+				2F616BD120174C74001074D9 /* AVFoundation.framework in Frameworks */,
 				2F1815771FE13A0D00EDD682 /* SCLAlertView.framework in Frameworks */,
 				A9FE2C68C203596B4FBE0DDF /* Pods_PrivyPlayer.framework in Frameworks */,
 			);
@@ -160,6 +196,9 @@
 				2F15406E1FDE6ACB005519EC /* SignUpViewController.swift */,
 				2F1540701FDE6AE0005519EC /* Auth.storyboard */,
 				2F1540661FDE46F3005519EC /* HomeTableViewController.swift */,
+				2F616BCE20174BE5001074D9 /* PlayerVideoViewController.swift */,
+				2F616BE02017586F001074D9 /* PlayerVideoVC.h */,
+				2F616BE12017586F001074D9 /* PlayerVideoVC.m */,
 				2F901BDD2007CB7100BC86A5 /* CachingPlayerItem.swift */,
 				2F1815731FE101EC00EDD682 /* SearchViewController.swift */,
 				2F1815861FE3C1E800EDD682 /* MyHistoryViewController.swift */,
@@ -195,6 +234,21 @@
 		3526EBB2D774961860F6AADC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F616BEF201763B9001074D9 /* VKFoundation.framework */,
+				2F616BF0201763B9001074D9 /* VKVideoPlayer.framework */,
+				2F616BE820175A11001074D9 /* DTCoreText.framework */,
+				2F616BE920175A11001074D9 /* DTFoundation.framework */,
+				2F616BEA20175A11001074D9 /* Reachability.framework */,
+				2F616BEB20175A11001074D9 /* VKFoundation.framework */,
+				2F616BEC20175A11001074D9 /* VKVideoPlayer.framework */,
+				2F616BDE20174CA9001074D9 /* MediaPlayer.framework */,
+				2F616BDC20174C9E001074D9 /* CoreAudioKit.framework */,
+				2F616BDA20174C95001074D9 /* CoreAudio.framework */,
+				2F616BD820174C90001074D9 /* AudioToolbox.framework */,
+				2F616BD620174C8A001074D9 /* CoreVideo.framework */,
+				2F616BD420174C83001074D9 /* VideoToolbox.framework */,
+				2F616BD220174C79001074D9 /* AVKit.framework */,
+				2F616BD020174C74001074D9 /* AVFoundation.framework */,
 				2F1815781FE13A0D00EDD682 /* SCLAlertView.framework */,
 				2F939B711FD7D53E005627CF /* ASPVideoPlayer.framework */,
 				74D2C939C6075BC66BFCB33A /* Pods_PrivyPlayer.framework */,
@@ -426,20 +480,20 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PrivyPlayer/Pods-PrivyPlayer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ASPVideoPlayer/ASPVideoPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/JPVideoPlayer/JPVideoPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ASPVideoPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JPVideoPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -527,10 +581,12 @@
 			files = (
 				2F1815891FE3EBB300EDD682 /* recentuploadsViewController.swift in Sources */,
 				2F15406F1FDE6ACB005519EC /* SignUpViewController.swift in Sources */,
+				2F616BCF20174BE5001074D9 /* PlayerVideoViewController.swift in Sources */,
 				2F1815741FE101EC00EDD682 /* SearchViewController.swift in Sources */,
 				2F1540671FDE46F3005519EC /* HomeTableViewController.swift in Sources */,
 				2F15406B1FDE479B005519EC /* TableViewCell.swift in Sources */,
 				2F1540691FDE4790005519EC /* Helpers.swift in Sources */,
+				2F616BE22017586F001074D9 /* PlayerVideoVC.m in Sources */,
 				2F15406D1FDE6AB7005519EC /* SignInViewController.swift in Sources */,
 				2F1815821FE2A5A800EDD682 /* MainTabBarController.m in Sources */,
 				2F18157A1FE14A2900EDD682 /* VideoCollectionViewCell.swift in Sources */,

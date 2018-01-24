@@ -12,7 +12,7 @@ import AVKit
 import Alamofire
 import SCLAlertView
 import GoogleMobileAds
-import JPVideoPlayer
+
 
 
 
@@ -167,25 +167,28 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
         let dict : NSDictionary = VideoList[indexPath.row] as! NSDictionary
         let CellTitle : String = dict.value(forKey: "title") as! String
         cell.videotitleLabel.text = CellTitle
-        let VideoURLfromAPI : String = dict.value(forKey: "url") as! String
+        
+     //   let VideoURLfromAPI : String = dict.value(forKey: "url") as! String
+        
+        let VideoURLfromAPI : String = "https://gig.gs/videos/360p/9514810031.mp4"
         
 //         let videoURL:URL = URL(string: VideoURLfromAPI)!
 //        cell.playbuttonImageView.jp_playVideo(with: videoURL)
 //
         
-        DispatchQueue.global(qos: .userInitiated).async {
-            let thumbnailImage = self.getThumbnailImage(forUrl: URL(string: VideoURLfromAPI)!)
-           
-            DispatchQueue.main.async() {
-                if cell.tag == (indexPath.row)*101 {
-                     cell.playbuttonImageView.image = thumbnailImage
-                    
-                    
-                }
-               
-                
-            }
-        }
+//        DispatchQueue.global(qos: .userInitiated).async {
+//            let thumbnailImage = self.getThumbnailImage(forUrl: URL(string: VideoURLfromAPI)!)
+//           
+//            DispatchQueue.main.async() {
+//                if cell.tag == (indexPath.row)*101 {
+//                     cell.playbuttonImageView.image = thumbnailImage
+//                    
+//                    
+//                }
+//               
+//                
+//            }
+//        }
 
         
        
@@ -209,38 +212,43 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
        
-        
-        print("Collection view at row \(collectionView.tag) selected index path \(indexPath)")
-        let Category : NSDictionary = AppDataManager.sharedInstance.VideoResponsefromHomeAPI[collectionView.tag] as! NSDictionary
-        let VideoList : Array<Any> = Category.value(forKey: "videos") as! Array<Any>
-        let dict : NSDictionary = VideoList[indexPath.row] as! NSDictionary
-        let VideoURLfromAPI : String = dict.value(forKey: "url") as! String
-       self.playvideo(VideoURL: VideoURLfromAPI)
-      //  self.playvideo1(VideoURL: VideoURLfromAPI)
-
-         DispatchQueue.global(qos: .userInitiated).async {
+        self.performSegue(withIdentifier: "playerView", sender: self)
         
         
-        let userID : String = UserDefaults.standard.value(forKey: "UserID") as! String
-        let VideoID : String = dict.value(forKeyPath: "reference") as! String
-        let parameter  = ["userId": userID , "videoId": VideoID]
-        Alamofire.request("http://gig.gs/video_history.php", method: .post, parameters: parameter, headers:nil)
-            .responseJSON { response in
-                debugPrint(response)
-                
-                
-                if let json = response.result.value {
-                    let dict = json as! NSDictionary
-                    print(dict)
-                    
-                }
-                else {
-                    print("Error")
-                }
-                
-        }
         
-        }
+//
+//        print("Collection view at row \(collectionView.tag) selected index path \(indexPath)")
+//        let Category : NSDictionary = AppDataManager.sharedInstance.VideoResponsefromHomeAPI[collectionView.tag] as! NSDictionary
+//        let VideoList : Array<Any> = Category.value(forKey: "videos") as! Array<Any>
+//        let dict : NSDictionary = VideoList[indexPath.row] as! NSDictionary
+//      //  let VideoURLfromAPI : String = dict.value(forKey: "url") as! String
+//        let VideoURLfromAPI : String = "http://gig.gs/videos/360p/9514810031.mp4"
+//      // self.playvideo(VideoURL: VideoURLfromAPI)
+//        self.playvideo1(VideoURL: VideoURLfromAPI)
+//
+//         DispatchQueue.global(qos: .userInitiated).async {
+//
+//
+//        let userID : String = UserDefaults.standard.value(forKey: "UserID") as! String
+//        let VideoID : String = dict.value(forKeyPath: "reference") as! String
+//        let parameter  = ["userId": userID , "videoId": VideoID]
+//        Alamofire.request("http://gig.gs/video_history.php", method: .post, parameters: parameter, headers:nil)
+//            .responseJSON { response in
+//                debugPrint(response)
+//
+//
+//                if let json = response.result.value {
+//                    let dict = json as! NSDictionary
+//                    print(dict)
+//
+//                }
+//                else {
+//                    print("Error")
+//                }
+//
+//        }
+//
+//        }
         
         
     }
@@ -250,7 +258,10 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
         
         
         let videoURL:URL = URL(string: VideoURL)!
-        let playerItem = CachingPlayerItem(url: videoURL)
+        //let playerItem = CachingPlayerItem(url: videoURL)
+        let avAsset = AVURLAsset(url: videoURL as URL, options: nil)
+        
+        let playerItem : AVPlayerItem = AVPlayerItem(asset: avAsset)
         
         let player = AVPlayer(playerItem: playerItem)
         if #available(iOS 10.0, *) {
@@ -285,9 +296,14 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
     
     
      func playvideo1(VideoURL:String) {
-        let videoURL:URL = URL(string: VideoURL)!
+       
         
-        
+        let videoURL = NSURL(string: VideoURL)
+        let playerAV = AVPlayer(url: videoURL! as URL)
+        let playerLayerAV = AVPlayerLayer(player: playerAV)
+        playerLayerAV.frame = self.view.bounds
+        self.view.layer.addSublayer(playerLayerAV)
+        playerAV.play()
         
         
     }

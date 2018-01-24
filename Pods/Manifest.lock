@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.5.0)
+  - ASPVideoPlayer (2.0.2)
   - Firebase/Core (4.1.1):
     - FirebaseAnalytics (= 4.0.3)
     - FirebaseCore (= 4.0.6)
@@ -25,7 +26,6 @@ PODS:
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GTMSessionFetcher/Core (1.1.11)
-  - JPVideoPlayer (2.4.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -38,15 +38,16 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - ASPVideoPlayer (~> 2.0.2)
   - Firebase/Core
   - Firebase/Storage
   - Google-Mobile-Ads-SDK
-  - JPVideoPlayer (~> 2.4.0)
   - SCLAlertView
   - SDWebImage (~> 4.0)
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  ASPVideoPlayer: fcfac6d210fff1cb5a43266caffe83957f01410b
   Firebase: 052c0de688fc87b414996eea13e223dd9fee3fa2
   FirebaseAnalytics: 76f754d37ca5b04f36856729b6af3ca0152d1069
   FirebaseCore: 28def3c643989c97ea5a69ea5000f5fa9902b9fd
@@ -55,11 +56,10 @@ SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: 83f7f890e638ce8f1debd440ea363338c9f6be3b
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
-  JPVideoPlayer: 3f02427aaf9ac3f34fe7d54403f28adb1f187564
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
 
-PODFILE CHECKSUM: bccf71162a9e39d4501cbdbce8fc0cd5f7815079
+PODFILE CHECKSUM: e07422874c866a18bc4021309a8fdeac0e21a7a9
 
 COCOAPODS: 1.3.1

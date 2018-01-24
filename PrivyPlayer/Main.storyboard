@@ -100,6 +100,7 @@
                     <connections>
                         <segue destination="ycN-hb-gOq" kind="show" identifier="searchVC" id="Bpe-ur-4UZ"/>
                         <segue destination="scW-c9-9Tc" kind="show" id="X2M-PJ-nPU"/>
+                        <segue destination="86c-c0-sFe" kind="show" identifier="playerView" id="pxV-Ei-0ha"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cql-BE-do5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -258,7 +259,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cql-Uv-R98" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2100" y="243.32833583208398"/>
+            <point key="canvasLocation" x="2119" y="376"/>
+        </scene>
+        <!--Player VideoVC-->
+        <scene sceneID="egd-Ym-UYf">
+            <objects>
+                <viewController id="86c-c0-sFe" customClass="PlayerVideoVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pdf-uC-XkU"/>
+                        <viewControllerLayoutGuide type="bottom" id="auP-Gd-M7j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lnq-Er-gae">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wJW-re-XHX">
+                                <rect key="frame" x="16" y="8" width="343" height="238"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="myWebView" destination="wJW-re-XHX" id="SKg-mK-ReI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8f7-3O-A4m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2893.5999999999999" y="177.66116941529236"/>
         </scene>
         <!--Home-->
         <scene sceneID="j60-gf-rxG">
