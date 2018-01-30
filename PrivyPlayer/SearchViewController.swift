@@ -12,6 +12,7 @@ import AVFoundation
 import AVKit
 import GoogleMobileAds
 import SCLAlertView
+import SDWebImage
 
 class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, GADInterstitialDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
@@ -67,22 +68,16 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             let dict : NSDictionary = dataArray[indexPath.section] as! NSDictionary
             let title : String = dict.value(forKeyPath: "title") as! String
             cell.textLabel?.text = title
-            let VideoURL: String = dict.value(forKey: "url") as! String
-            cell.imageView?.image = UIImage.init(named: "video-player")
+           
+            let previewImageURL : String = dict.value(forKey: "previewImage") as! String
+            cell.imageView?.sd_setImage(with: URL(string:previewImageURL), completed: nil)
             cell.layer.cornerRadius = 5
             cell.layer.masksToBounds = true
             cell.layer.borderWidth = 1
             cell.layer.borderColor = UIColor.lightGray.cgColor
             
             
-            DispatchQueue.global(qos: .userInitiated).async {
-                let thumbnailImage = self.getThumbnailImage(forUrl: URL(string: VideoURL)!)
-                
-                DispatchQueue.main.sync {
-                    cell.imageView?.image = thumbnailImage
-                    cell.reloadInputViews()
-                }
-            }
+           
 
             
             
@@ -94,8 +89,10 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dict : NSDictionary = dataArray[indexPath.section] as! NSDictionary
-        let VideoURL: String = dict.value(forKey: "url") as! String
+        let VideoURLArray : Array<String> = dict.value(forKey: "url") as! Array<String>
+        let VideoURL: String = VideoURLArray.last!
         self.playvideo(VideoURL: VideoURL)
+        
         
         
     }
@@ -125,8 +122,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     func searchButtonMethod() {
         
         let searchquery : String = self.searchBar.text!
-        
-        Alamofire.request("http://gig.gs/search.php", method: .post, parameters: ["name":searchquery], headers:nil)
+        let UserID : String = UserDefaults.standard.value(forKey: "UserID") as! String
+        Alamofire.request("http://gig.gs/API_V2/API/searchResult", method: .post, parameters: ["search":searchquery,"user_id":UserID], headers:nil)
             .responseJSON { response in
                 debugPrint(response)
                 
@@ -134,10 +131,12 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 if let json = response.result.value {
                     let dict = json as! NSDictionary
                     print(dict)
-                    let type : String = dict.value(forKeyPath: "response.type") as! String
-                    if type == "success" {
+                    let type : String = dict.value(forKeyPath: "status.type") as! String
+                    if type == "Success" {
                         
-                        self.dataArray = dict.value(forKeyPath: "values") as! [Any]
+                        let responseArray : Array<Any> = dict.value(forKey: "response") as! Array<Any>
+                        let responseDict : NSDictionary = responseArray.first as! NSDictionary
+                        self.dataArray = responseDict.value(forKey: "videos") as! [Any]
                         
                           self.tableView.isHidden = false
                           self.tableView.reloadData()

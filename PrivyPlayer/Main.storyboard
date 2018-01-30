@@ -37,10 +37,10 @@
                         <color key="backgroundColor" red="0.0" green="0.014140920849953158" blue="0.12767078579984947" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="130" id="dVh-Kx-8r0" customClass="TableViewCell" customModule="PrivyPlayer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="130"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dVh-Kx-8r0" id="rIq-Vb-WWl">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="129"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Okc-ir-a1l">
@@ -101,6 +101,7 @@
                         <segue destination="ycN-hb-gOq" kind="show" identifier="searchVC" id="Bpe-ur-4UZ"/>
                         <segue destination="scW-c9-9Tc" kind="show" id="X2M-PJ-nPU"/>
                         <segue destination="86c-c0-sFe" kind="show" identifier="playerView" id="pxV-Ei-0ha"/>
+                        <segue destination="8qx-Gq-Y7S" kind="show" identifier="playerView2" id="o0w-VT-gY5"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cql-BE-do5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -126,7 +127,7 @@
                                 <inset key="separatorInset" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="3fm-48-YWT" rowHeight="100" style="IBUITableViewCellStyleDefault" id="Gl6-pg-4fy">
-                                        <rect key="frame" x="0.0" y="55.5" width="343" height="100"/>
+                                        <rect key="frame" x="0.0" y="56" width="343" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gl6-pg-4fy" id="PVH-vR-xT8">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
@@ -176,7 +177,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="I12-I4-L3N" rowHeight="92" style="IBUITableViewCellStyleDefault" id="Mgf-L3-Ov0">
-                                        <rect key="frame" x="0.0" y="55.5" width="343" height="92"/>
+                                        <rect key="frame" x="0.0" y="56" width="343" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mgf-L3-Ov0" id="cux-Cv-Jev">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="92"/>
@@ -230,7 +231,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="wHh-ml-9z7" rowHeight="100" style="IBUITableViewCellStyleDefault" id="LBK-h6-DO0">
-                                        <rect key="frame" x="0.0" y="55.5" width="360" height="100"/>
+                                        <rect key="frame" x="0.0" y="56" width="360" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LBK-h6-DO0" id="165-gy-tpQ">
                                             <rect key="frame" x="0.0" y="0.0" width="360" height="100"/>
@@ -261,10 +262,38 @@
             </objects>
             <point key="canvasLocation" x="2119" y="376"/>
         </scene>
-        <!--Player VideoVC-->
+        <!--Vplayer View Controller-->
+        <scene sceneID="Tq2-gq-GZn">
+            <objects>
+                <viewController id="8qx-Gq-Y7S" customClass="AVplayerViewController" customModule="PrivyPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gu5-ZV-X36"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qih-qd-mHx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7YY-WB-Tid">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Glm-Yh-3aN">
+                                <rect key="frame" x="16" y="8" width="343" height="246"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="videoPlayerView" destination="Glm-Yh-3aN" id="REG-of-L7p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bhR-Yv-EPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2999.1999999999998" y="585.1574212893554"/>
+        </scene>
+        <!--Player Video View Controller-->
         <scene sceneID="egd-Ym-UYf">
             <objects>
-                <viewController id="86c-c0-sFe" customClass="PlayerVideoVC" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="86c-c0-sFe" customClass="PlayerVideoViewController" customModule="PrivyPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pdf-uC-XkU"/>
                         <viewControllerLayoutGuide type="bottom" id="auP-Gd-M7j"/>
@@ -273,21 +302,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wJW-re-XHX">
-                                <rect key="frame" x="16" y="8" width="343" height="238"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="txL-0h-Nf1">
+                                <rect key="frame" x="16" y="307" width="73" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PjH-es-95R">
+                                <rect key="frame" x="97" y="307" width="262" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jk-fB-ERo">
+                                <rect key="frame" x="16" y="395" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4R3-n7-lJY">
+                                <rect key="frame" x="97" y="336" width="262" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83o-tI-yec">
+                                <rect key="frame" x="16" y="424" width="343" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
-                        <outlet property="myWebView" destination="wJW-re-XHX" id="SKg-mK-ReI"/>
+                        <outlet property="descriptionTitle" destination="0jk-fB-ERo" id="rE3-wJ-xXU"/>
+                        <outlet property="videoDescriptionTextView" destination="83o-tI-yec" id="v9V-xU-TRs"/>
+                        <outlet property="videoImageView" destination="txL-0h-Nf1" id="zoo-eB-GRj"/>
+                        <outlet property="videoTitleTextView" destination="4R3-n7-lJY" id="rFU-gA-3Vl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8f7-3O-A4m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2893.5999999999999" y="177.66116941529236"/>
+            <point key="canvasLocation" x="2936.8000000000002" y="-147.07646176911544"/>
         </scene>
         <!--Home-->
         <scene sceneID="j60-gf-rxG">

@@ -7,68 +7,79 @@
 //
 
 import UIKit
-import AVKit
-import AVFoundation
-import ASPVideoPlayer
+import WebKit
+import SDWebImage
 
-class PlayerVideoViewController: UIViewController {
-let videoPlayer = ASPVideoPlayer()
+class PlayerVideoViewController: UIViewController, WKNavigationDelegate {
+public var VideoURL = String()
+public var SelectedVideoObject = NSDictionary()
+    @IBOutlet var videoImageView: UIImageView!
+    @IBOutlet var videoTitleTextView: UITextView!
+    @IBOutlet var videoDescriptionTextView: UITextView!
+    
+    @IBOutlet var descriptionTitle: UILabel!
+    
+    
+var webView : WKWebView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
+    }
+    override func viewDidAppear(_ animated: Bool) {
         
+        // init and load request in webview.
+        webView = WKWebView(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height/2))
+        webView.configuration.allowsInlineMediaPlayback = true
+        webView.configuration.allowsAirPlayForMediaPlayback = true
+        webView.configuration.requiresUserActionForMediaPlayback = false
+        webView.clipsToBounds = true
+        webView.backgroundColor = UIColor.darkGray
+        webView.navigationDelegate = self
+        webView.autoresizesSubviews = true
+        webView.autoresizingMask = (UIViewAutoresizing(rawValue: UIViewAutoresizing.RawValue(UInt8(UIViewAutoresizing.flexibleHeight.rawValue) | UInt8(UIViewAutoresizing.flexibleWidth.rawValue) | UInt8(UIViewAutoresizing.flexibleTopMargin.rawValue) | UInt8(UIViewAutoresizing.flexibleBottomMargin.rawValue))))
         
-//        let videoURL = Bundle.main.url(forResource: "https://gig.gs/videos/360p/9514810031.mp4", withExtension: "mp4")
-//
-//        videoPlayer.videoURL = videoURL
-//
-//        videoPlayer.readyToPlayVideo = {
-//
-//            self.videoPlayer.playVideo()
-//            print("Video has been successfully loaded and can be played.")
-//        }
-//
-//        videoPlayer.startedVideo = {
-//            print("Video has started playing.")
-//        }
-//        videoPlayer.frame = self.view.bounds
-//        self.view.addSubview(videoPlayer)
-//        videoPlayer.playVideo()
-//
-
-        // Do any additional setup after loading the view.
+        let url = URL(string: VideoURL)
+        let request = URLRequest.init(url: url!)
+        webView.load(request)
+        webView.allowsLinkPreview = true
+        self.view.addSubview(webView)
+        self.view.sendSubview(toBack: webView)
+       
     }
     override func viewWillAppear(_ animated: Bool) {
+        videoDescriptionTextView.isHidden = true
+        descriptionTitle.isHidden = true
+        print(SelectedVideoObject)
+        let VideoTitle : String = self.SelectedVideoObject.value(forKeyPath: "title") as! String
+        videoTitleTextView.text = VideoTitle
+        let VideoDescription : String = self.SelectedVideoObject.value(forKeyPath: "description") as! String
+            videoDescriptionTextView.text = VideoDescription
         
-        let testVideoURL = URL(string: "http://gig.gs/videos/Angreji%20Wali%20Madam%20by%20Kulwinder%20Billa%20Dr%20Zeus%20Shipra%20Goyal.mp4")
-        let firstVideoURL = URL(string: "http://gig.gs/videos/720p/4798310032_lowest.mp4")
-        let secondVideoURL = URL(string: "https://gig.gs/videos/720p/9514810031.mp4")
+        print("Video Description Count is \(VideoDescription.count)")
+        if VideoDescription.count > 1 {
+            videoDescriptionTextView.isHidden = false
+            descriptionTitle.isHidden = false
+        }
         
-        videoPlayer.videoURLs = [testVideoURL!, firstVideoURL!, secondVideoURL!]
         
-        videoPlayer.gravity = .aspectFit
+        let VideoImageURl : String = self.SelectedVideoObject.value(forKeyPath: "previewImage") as! String
+        videoImageView.sd_setImage(with: URL(string:VideoImageURl), completed: nil)
         
-        videoPlayer.shouldLoop = true
-        videoPlayer.frame = self.view.bounds
-        videoPlayer.backgroundColor = UIColor.black
         
-        self.view.addSubview(videoPlayer)
         
-//        let videoURL = NSURL(string: "https://gig.gs/videos/360p/9514810031.mp4")
-//        let playerAV = AVPlayer(url: videoURL! as URL)
-//
-//
-//        let playerLayerAV = AVPlayerLayer(player: playerAV)
-//        playerLayerAV.frame = self.view.bounds
-//
-//        self.view.layer.addSublayer(playerLayerAV)
-//        playerAV.play()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+       
     }
     
 

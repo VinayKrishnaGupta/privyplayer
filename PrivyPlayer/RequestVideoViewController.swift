@@ -50,12 +50,12 @@ class RequestVideoViewController: UIViewController {
             print("All Fields are Mandetory")
         }
         else {
-            let UserID : String = "1"
+            let UserID : String = UserDefaults.standard.value(forKey: "UserID") as! String
             let VideoTitle : String = self.videoTitleTextField.text!
             let VideoCategory : String = self.VideoCategoryTextField.text!
             
             let parameter = ["video_title": VideoTitle, "user_id":UserID, "video_category": VideoCategory ]
-            Alamofire.request("http://gig.gs/request_video.php", method: .post, parameters: parameter, headers:nil)
+            Alamofire.request("http://gig.gs/API_V2/API/requestVideo", method: .post, parameters: parameter, headers:nil)
                 .responseJSON { response in
                     debugPrint(response)
                     

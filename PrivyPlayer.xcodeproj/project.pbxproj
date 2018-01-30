@@ -33,6 +33,7 @@
 		2F616BDD20174C9E001074D9 /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F616BDC20174C9E001074D9 /* CoreAudioKit.framework */; };
 		2F616BDF20174CA9001074D9 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F616BDE20174CA9001074D9 /* MediaPlayer.framework */; };
 		2F616BE22017586F001074D9 /* PlayerVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F616BE12017586F001074D9 /* PlayerVideoVC.m */; };
+		2F616BF2201F17E2001074D9 /* AVplayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F616BF1201F17E2001074D9 /* AVplayerViewController.swift */; };
 		2F901BDE2007CB7100BC86A5 /* CachingPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F901BDD2007CB7100BC86A5 /* CachingPlayerItem.swift */; };
 		2F939B411FD7B67D005627CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F939B401FD7B67D005627CF /* AppDelegate.swift */; };
 		2F939B481FD7B67D005627CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F939B471FD7B67D005627CF /* Assets.xcassets */; };
@@ -99,6 +100,7 @@
 		2F616BEC20175A11001074D9 /* VKVideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VKVideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F616BEF201763B9001074D9 /* VKFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VKFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F616BF0201763B9001074D9 /* VKVideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VKVideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F616BF1201F17E2001074D9 /* AVplayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVplayerViewController.swift; sourceTree = "<group>"; };
 		2F901BDD2007CB7100BC86A5 /* CachingPlayerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachingPlayerItem.swift; sourceTree = "<group>"; };
 		2F939B3D1FD7B67D005627CF /* PrivyPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivyPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F939B401FD7B67D005627CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				2F1540701FDE6AE0005519EC /* Auth.storyboard */,
 				2F1540661FDE46F3005519EC /* HomeTableViewController.swift */,
 				2F616BCE20174BE5001074D9 /* PlayerVideoViewController.swift */,
+				2F616BF1201F17E2001074D9 /* AVplayerViewController.swift */,
 				2F616BE02017586F001074D9 /* PlayerVideoVC.h */,
 				2F616BE12017586F001074D9 /* PlayerVideoVC.m */,
 				2F901BDD2007CB7100BC86A5 /* CachingPlayerItem.swift */,
@@ -579,6 +582,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F616BF2201F17E2001074D9 /* AVplayerViewController.swift in Sources */,
 				2F1815891FE3EBB300EDD682 /* recentuploadsViewController.swift in Sources */,
 				2F15406F1FDE6ACB005519EC /* SignUpViewController.swift in Sources */,
 				2F616BCF20174BE5001074D9 /* PlayerVideoViewController.swift in Sources */,

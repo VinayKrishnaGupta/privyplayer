@@ -62,7 +62,7 @@ class SignInViewController: UIViewController {
         
         let parameter1 : Parameters  = ["email_id" : username , "password": password] as Parameters
         
-      Alamofire.request("http://gig.gs/login.php", method: .post, parameters: parameter1, headers: nil)
+      Alamofire.request("http://gig.gs/API_V2/API/login", method: .post, parameters: parameter1, headers: nil)
         .responseJSON { response in
                 debugPrint(response)
                 
@@ -70,11 +70,11 @@ class SignInViewController: UIViewController {
                 if let json = response.result.value {
                     let dict = json as! NSDictionary
                     print(dict)
-                    let type : String = dict.value(forKeyPath: "Response.data.type") as! String
-                    let message: String = dict.value(forKeyPath: "Response.data.message") as! String
+                    let type : String = dict.value(forKeyPath: "status.type") as! String
+                    let message: String = dict.value(forKeyPath: "status.message") as! String
                     if type == "Success" {
                         
-                        let userID = dict.value(forKeyPath: "Response.data.user_id")
+                        let userID = dict.value(forKeyPath: "response.user_id")
                         UserDefaults.standard.set(userID, forKey: "UserID")
                         UserDefaults.standard.synchronize()
                         
