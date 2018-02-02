@@ -11,33 +11,27 @@ import AVFoundation
 import AVKit
 import Alamofire
 import SCLAlertView
-import GoogleMobileAds
 
 
 
 
-
-class HomeTableViewController: UITableViewController, GADInterstitialDelegate{
+class HomeTableViewController: UITableViewController{
     var ResponseArray = Array<Any>()
     let model = generateRandomData()
     var storedOffsets = [Int: CGFloat]()
-    var interstitial: GADInterstitial!
+ 
     var SelectedVideoDict = NSDictionary()
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544")
-        let request = GADRequest()
-        interstitial.load(request)
-        interstitial = createAndLoadInterstitial()
-        
+       
         try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: [])
 
         
         let searchButton = UIBarButtonItem.init(image: UIImage.init(named: "searchIcon"), style: .done, target: self, action: #selector(SearchButtonMethod))
-        let uploadButton = UIBarButtonItem.init(image: UIImage.init(named: "videoUpload"), style: .done, target: self, action: #selector(upLoadButtonMethod))
+        
        self.navigationItem.rightBarButtonItem = searchButton
       //  self.navigationItem.rightBarButtonItems = [uploadButton, searchButton]
     
@@ -199,18 +193,7 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
         return cell
     }
     
-    func createAndLoadInterstitial() -> GADInterstitial {
-        var interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544")
-        //ca-app-pub-3940256099942544 : test
-        //ca-app-pub-1388255702174478/2655077021 : prod
-        interstitial.delegate = self
-        interstitial.load(GADRequest())
-        return interstitial
-    }
     
-    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-        interstitial = createAndLoadInterstitial()
-    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
        
@@ -224,7 +207,20 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
         let VideoURLfromAPI : String =  VideoURLList.last!
         print("Selected Video URL is \(VideoURLfromAPI)")
         
-        self.performSegue(withIdentifier: "playerView", sender: VideoURLfromAPI)
+        let PlayerType : String = SelectedVideoDict.value(forKey: "playOn") as! String
+        if PlayerType == "Player" {
+            self.performSegue(withIdentifier: "myAVplayer", sender: VideoURLfromAPI)
+         //   self.playvideo(VideoURL: VideoURLfromAPI)
+        }
+        else {
+            self.performSegue(withIdentifier: "playerView", sender: VideoURLfromAPI)
+
+        }
+        
+       
+        
+        
+        
         
         DispatchQueue.global(qos: .userInitiated).async {
                 let userID : String = UserDefaults.standard.value(forKey: "UserID") as! String
@@ -273,9 +269,9 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
             vc.VideoURL = sender as! String
             vc.SelectedVideoObject = self.SelectedVideoDict
         }
-        if segue.identifier == "playerView2" {
-            let vc = segue.destination as! AVplayerViewController
-            vc.VideoURL = sender as! String
+        if segue.identifier == "myAVplayer" {
+            let vc = segue.destination as! MyAVPlayerViewController
+            vc.videoURLfromHome = sender as! String
         }
     }
     
@@ -297,7 +293,7 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
         }
       
         player.allowsExternalPlayback = true
-    //    player.appliesMediaSelectionCriteriaAutomatically = true
+   
          NotificationCenter.default.addObserver(self,selector: #selector(self.playerDidFinishPlaying), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player)
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
@@ -306,15 +302,7 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
             playerViewController.player!.play()
            
 
-//            if self.interstitial.isReady {
-//               playerViewController.player!.pause()
-//                self.interstitial.present(fromRootViewController: playerViewController)
-//
-//            } else {
-//                print("Ad wasn't ready")
-//
-//            }
-            
+
           
         }
         
@@ -337,14 +325,7 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
    func playerDidFinishPlaying() {
         print("Video End")
         
-        if self.interstitial.isReady {
-            self.interstitial.present(fromRootViewController: self)
-        } else {
-            print("Ad wasn't ready")
-            
-            
-        }
-        
+      
     }
     
     

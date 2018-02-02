@@ -12,7 +12,7 @@ import SCLAlertView
 
 class RequestVideoViewController: UIViewController {
     @IBOutlet weak var videoTitleTextField: UITextField!
-    @IBOutlet weak var VideoCategoryTextField: UITextField!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,15 +46,15 @@ class RequestVideoViewController: UIViewController {
     
     func SubmitButtonMethod(){
         
-        if (videoTitleTextField.text?.isEmpty)! || (VideoCategoryTextField.text?.isEmpty)! {
+        if (videoTitleTextField.text?.isEmpty)! {
             print("All Fields are Mandetory")
         }
         else {
             let UserID : String = UserDefaults.standard.value(forKey: "UserID") as! String
             let VideoTitle : String = self.videoTitleTextField.text!
-            let VideoCategory : String = self.VideoCategoryTextField.text!
+          
             
-            let parameter = ["video_title": VideoTitle, "user_id":UserID, "video_category": VideoCategory ]
+            let parameter = ["video_title": VideoTitle, "user_id":UserID ]
             Alamofire.request("http://gig.gs/API_V2/API/requestVideo", method: .post, parameters: parameter, headers:nil)
                 .responseJSON { response in
                     debugPrint(response)
@@ -63,10 +63,10 @@ class RequestVideoViewController: UIViewController {
                     if let json = response.result.value {
                         let dict = json as! NSDictionary
                         print(dict)
-                        let type : String = dict.value(forKeyPath: "response.type") as! String
-                        if type == "success" {
+                        let type : String = dict.value(forKeyPath: "status.type") as! String
+                        if type == "Success" {
                             self.videoTitleTextField.text = nil
-                            self.VideoCategoryTextField.text = nil
+                           
                              SCLAlertView().showSuccess("Success", subTitle: "We have received your request and Notify You on video Upload")
                             
                             

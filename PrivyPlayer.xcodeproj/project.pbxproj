@@ -32,8 +32,7 @@
 		2F616BDB20174C96001074D9 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F616BDA20174C95001074D9 /* CoreAudio.framework */; };
 		2F616BDD20174C9E001074D9 /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F616BDC20174C9E001074D9 /* CoreAudioKit.framework */; };
 		2F616BDF20174CA9001074D9 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F616BDE20174CA9001074D9 /* MediaPlayer.framework */; };
-		2F616BE22017586F001074D9 /* PlayerVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F616BE12017586F001074D9 /* PlayerVideoVC.m */; };
-		2F616BF2201F17E2001074D9 /* AVplayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F616BF1201F17E2001074D9 /* AVplayerViewController.swift */; };
+		2F616BF42021C920001074D9 /* MyAVPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F616BF32021C920001074D9 /* MyAVPlayerViewController.swift */; };
 		2F901BDE2007CB7100BC86A5 /* CachingPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F901BDD2007CB7100BC86A5 /* CachingPlayerItem.swift */; };
 		2F939B411FD7B67D005627CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F939B401FD7B67D005627CF /* AppDelegate.swift */; };
 		2F939B481FD7B67D005627CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F939B471FD7B67D005627CF /* Assets.xcassets */; };
@@ -91,8 +90,6 @@
 		2F616BDA20174C95001074D9 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		2F616BDC20174C9E001074D9 /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
 		2F616BDE20174CA9001074D9 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		2F616BE02017586F001074D9 /* PlayerVideoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerVideoVC.h; sourceTree = "<group>"; };
-		2F616BE12017586F001074D9 /* PlayerVideoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerVideoVC.m; sourceTree = "<group>"; };
 		2F616BE820175A11001074D9 /* DTCoreText.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DTCoreText.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F616BE920175A11001074D9 /* DTFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DTFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F616BEA20175A11001074D9 /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Reachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,7 +97,7 @@
 		2F616BEC20175A11001074D9 /* VKVideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VKVideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F616BEF201763B9001074D9 /* VKFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VKFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F616BF0201763B9001074D9 /* VKVideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VKVideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F616BF1201F17E2001074D9 /* AVplayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVplayerViewController.swift; sourceTree = "<group>"; };
+		2F616BF32021C920001074D9 /* MyAVPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAVPlayerViewController.swift; sourceTree = "<group>"; };
 		2F901BDD2007CB7100BC86A5 /* CachingPlayerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachingPlayerItem.swift; sourceTree = "<group>"; };
 		2F939B3D1FD7B67D005627CF /* PrivyPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivyPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F939B401FD7B67D005627CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -199,9 +196,7 @@
 				2F1540701FDE6AE0005519EC /* Auth.storyboard */,
 				2F1540661FDE46F3005519EC /* HomeTableViewController.swift */,
 				2F616BCE20174BE5001074D9 /* PlayerVideoViewController.swift */,
-				2F616BF1201F17E2001074D9 /* AVplayerViewController.swift */,
-				2F616BE02017586F001074D9 /* PlayerVideoVC.h */,
-				2F616BE12017586F001074D9 /* PlayerVideoVC.m */,
+				2F616BF32021C920001074D9 /* MyAVPlayerViewController.swift */,
 				2F901BDD2007CB7100BC86A5 /* CachingPlayerItem.swift */,
 				2F1815731FE101EC00EDD682 /* SearchViewController.swift */,
 				2F1815861FE3C1E800EDD682 /* MyHistoryViewController.swift */,
@@ -483,23 +478,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PrivyPlayer/Pods-PrivyPlayer-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ASPVideoPlayer/ASPVideoPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ASPVideoPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -582,15 +569,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F616BF2201F17E2001074D9 /* AVplayerViewController.swift in Sources */,
 				2F1815891FE3EBB300EDD682 /* recentuploadsViewController.swift in Sources */,
 				2F15406F1FDE6ACB005519EC /* SignUpViewController.swift in Sources */,
 				2F616BCF20174BE5001074D9 /* PlayerVideoViewController.swift in Sources */,
 				2F1815741FE101EC00EDD682 /* SearchViewController.swift in Sources */,
+				2F616BF42021C920001074D9 /* MyAVPlayerViewController.swift in Sources */,
 				2F1540671FDE46F3005519EC /* HomeTableViewController.swift in Sources */,
 				2F15406B1FDE479B005519EC /* TableViewCell.swift in Sources */,
 				2F1540691FDE4790005519EC /* Helpers.swift in Sources */,
-				2F616BE22017586F001074D9 /* PlayerVideoVC.m in Sources */,
 				2F15406D1FDE6AB7005519EC /* SignInViewController.swift in Sources */,
 				2F1815821FE2A5A800EDD682 /* MainTabBarController.m in Sources */,
 				2F18157A1FE14A2900EDD682 /* VideoCollectionViewCell.swift in Sources */,
@@ -760,6 +746,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 32FNS63J4U;
 				INFOPLIST_FILE = PrivyPlayer/Info.plist;
@@ -767,6 +754,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = international.rst.com.gig.gs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PrivyPlayer/PrivyPlayer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -780,6 +768,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 32FNS63J4U;
 				INFOPLIST_FILE = PrivyPlayer/Info.plist;
@@ -787,6 +776,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = international.rst.com.gig.gs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PrivyPlayer/PrivyPlayer-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

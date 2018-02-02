@@ -4,12 +4,12 @@
 target 'PrivyPlayer' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
 use_frameworks!
-pod 'Firebase/Core'
-pod 'Firebase/Storage'
+#pod 'Firebase/Core'
+#pod 'Firebase/Storage'
 pod 'Alamofire'
 pod 'SCLAlertView'
 pod 'SDWebImage', '~> 4.0'  
-pod 'ASPVideoPlayer', '~> 2.0.2'
+#pod 'ASPVideoPlayer', '~> 2.0.2'
 pod 'Google-Mobile-Ads-SDK'
 #pod 'VKVideoPlayer' , :git => 'https://github.com/viki-org/VKVideoPlayer'
 #pod 'ASPVideoPlayer', '~> 3.0.1'

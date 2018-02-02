@@ -61,7 +61,7 @@ class SignUpViewController: UIViewController {
                 if let json = response.result.value {
                     let dict = json as! NSDictionary
                     print(dict)
-                    let type : String = dict.value(forKeyPath: "statustype") as! String
+                    let type : String = dict.value(forKeyPath: "status.type") as! String
                     let message: String = dict.value(forKeyPath: "status.message") as! String
                     if type == "Success" {
                         self.SigninMethod()

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 
 
@@ -27,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.makeKeyAndVisible()
         }
         
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-1687791729093117/8134087614")
         
         
         // Override point for customization after application launch.

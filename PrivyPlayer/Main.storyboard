@@ -37,10 +37,10 @@
                         <color key="backgroundColor" red="0.0" green="0.014140920849953158" blue="0.12767078579984947" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="130" id="dVh-Kx-8r0" customClass="TableViewCell" customModule="PrivyPlayer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="56" width="375" height="130"/>
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dVh-Kx-8r0" id="rIq-Vb-WWl">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="129"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Okc-ir-a1l">
@@ -101,7 +101,7 @@
                         <segue destination="ycN-hb-gOq" kind="show" identifier="searchVC" id="Bpe-ur-4UZ"/>
                         <segue destination="scW-c9-9Tc" kind="show" id="X2M-PJ-nPU"/>
                         <segue destination="86c-c0-sFe" kind="show" identifier="playerView" id="pxV-Ei-0ha"/>
-                        <segue destination="8qx-Gq-Y7S" kind="show" identifier="playerView2" id="o0w-VT-gY5"/>
+                        <segue destination="471-le-5fh" kind="showDetail" identifier="myAVplayer" action="showViewController:sender:" id="yOI-r4-i2Q"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cql-BE-do5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -127,7 +127,7 @@
                                 <inset key="separatorInset" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="3fm-48-YWT" rowHeight="100" style="IBUITableViewCellStyleDefault" id="Gl6-pg-4fy">
-                                        <rect key="frame" x="0.0" y="56" width="343" height="100"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="343" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gl6-pg-4fy" id="PVH-vR-xT8">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
@@ -177,7 +177,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="I12-I4-L3N" rowHeight="92" style="IBUITableViewCellStyleDefault" id="Mgf-L3-Ov0">
-                                        <rect key="frame" x="0.0" y="56" width="343" height="92"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="343" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mgf-L3-Ov0" id="cux-Cv-Jev">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="92"/>
@@ -231,7 +231,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="wHh-ml-9z7" rowHeight="100" style="IBUITableViewCellStyleDefault" id="LBK-h6-DO0">
-                                        <rect key="frame" x="0.0" y="56" width="360" height="100"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="360" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LBK-h6-DO0" id="165-gy-tpQ">
                                             <rect key="frame" x="0.0" y="0.0" width="360" height="100"/>
@@ -256,39 +256,20 @@
                     <connections>
                         <outlet property="searchBar" destination="bKS-Di-NeE" id="YLl-HZ-pIu"/>
                         <outlet property="tableView" destination="Ugj-Ki-Tyo" id="X1b-qc-Cuy"/>
+                        <segue destination="471-le-5fh" kind="showDetail" identifier="myAVplayer" action="showViewController:sender:" id="PFU-X9-3sJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cql-Uv-R98" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2119" y="376"/>
+            <point key="canvasLocation" x="2119" y="615"/>
         </scene>
-        <!--Vplayer View Controller-->
-        <scene sceneID="Tq2-gq-GZn">
+        <!--AV Player View Controller-->
+        <scene sceneID="gdz-PM-zWn">
             <objects>
-                <viewController id="8qx-Gq-Y7S" customClass="AVplayerViewController" customModule="PrivyPlayer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gu5-ZV-X36"/>
-                        <viewControllerLayoutGuide type="bottom" id="Qih-qd-mHx"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7YY-WB-Tid">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Glm-Yh-3aN">
-                                <rect key="frame" x="16" y="8" width="343" height="246"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="videoPlayerView" destination="Glm-Yh-3aN" id="REG-of-L7p"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bhR-Yv-EPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <avPlayerViewController hidesBottomBarWhenPushed="YES" videoGravity="AVLayerVideoGravityResizeAspect" id="471-le-5fh" customClass="MyAVPlayerViewController" customModule="PrivyPlayer" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WVY-cv-WS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2999.1999999999998" y="585.1574212893554"/>
+            <point key="canvasLocation" x="3043" y="598"/>
         </scene>
         <!--Player Video View Controller-->
         <scene sceneID="egd-Ym-UYf">
@@ -459,7 +440,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZq-Aa-XtT">
-                                <rect key="frame" x="16" y="255" width="343" height="45"/>
+                                <rect key="frame" x="16" y="165" width="343" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.22198989987373352" green="0.49313008785247803" blue="0.48244732618331909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Submit">
@@ -469,26 +450,16 @@
                                     <action selector="SubmitButton:" destination="ZzN-8W-Xol" eventType="touchUpInside" id="7VU-K2-yjQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Video Category (English Song,  Hindi Movie etc)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRa-w4-L6U">
-                                <rect key="frame" x="16" y="149" width="343" height="20"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="656-Mm-BaN" customClass="GADBannerView">
+                                <rect key="frame" x="16" y="376" width="343" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sH5-hs-KiB">
-                                <rect key="frame" x="16" y="178" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Request A Video" id="PTE-66-sxi"/>
                     <connections>
-                        <outlet property="VideoCategoryTextField" destination="sH5-hs-KiB" id="1FN-0h-DsO"/>
                         <outlet property="videoTitleTextField" destination="OjG-XY-FUO" id="IvH-x8-IZe"/>
                     </connections>
                 </viewController>
@@ -554,4 +525,7 @@
         <image name="profileicon" width="32" height="32"/>
         <image name="recentuploadicon" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="PFU-X9-3sJ"/>
+    </inferredMetricsTieBreakers>
 </document>

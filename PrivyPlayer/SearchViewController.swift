@@ -31,24 +31,13 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         searchBar.delegate = self
        self.navigationItem.title = "Search"
         tableView.isHidden = true
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-1388255702174478/2655077021")
-        let request = GADRequest()
-        interstitial.load(request)
-        interstitial = createAndLoadInterstitial()
+       
         try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: [])
         // Do any additional setup after loading the view.
     }
     
-    func createAndLoadInterstitial() -> GADInterstitial {
-        var interstitial = GADInterstitial(adUnitID: "ca-app-pub-1388255702174478/2655077021")
-        interstitial.delegate = self
-        interstitial.load(GADRequest())
-        return interstitial
-    }
-    
-    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-        interstitial = createAndLoadInterstitial()
-    }
+  
+ 
     func numberOfSections(in tableView: UITableView) -> Int {
         if dataArray.count>0 {
             return dataArray.count
@@ -91,10 +80,17 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         let dict : NSDictionary = dataArray[indexPath.section] as! NSDictionary
         let VideoURLArray : Array<String> = dict.value(forKey: "url") as! Array<String>
         let VideoURL: String = VideoURLArray.last!
-        self.playvideo(VideoURL: VideoURL)
+         self.performSegue(withIdentifier: "myAVplayer", sender: VideoURL)
         
         
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "myAVplayer" {
+            let vc = segue.destination as! MyAVPlayerViewController
+            vc.videoURLfromHome = sender as! String
+        }
     }
     
     
