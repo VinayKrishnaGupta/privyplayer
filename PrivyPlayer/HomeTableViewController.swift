@@ -33,6 +33,8 @@ class HomeTableViewController: UITableViewController{
         let searchButton = UIBarButtonItem.init(image: UIImage.init(named: "searchIcon"), style: .done, target: self, action: #selector(SearchButtonMethod))
         
        self.navigationItem.rightBarButtonItem = searchButton
+        
+      //  self.view.backgroundColor = UIColor(patternImage: UIImage(named: "filmreels2.png")!)
       //  self.navigationItem.rightBarButtonItems = [uploadButton, searchButton]
     
         

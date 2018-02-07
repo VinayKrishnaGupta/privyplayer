@@ -55,30 +55,16 @@ class MyHistoryViewController: UIViewController, UITableViewDataSource, UITableV
         return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MyHistoryTableViewCell
         
         if dataArray.count>0 {
             let dict : NSDictionary = dataArray[indexPath.section] as! NSDictionary
             let title : String = dict.value(forKeyPath: "title") as! String
-            cell.textLabel?.text = title
+            cell.HistoryTitle.text = title
            // let VideoURL: String = dict.value(forKey: "video url") as! String
-            cell.imageView?.image = UIImage.init(named: "video-player")
-            cell.tag = indexPath.section
-            
-//            DispatchQueue.global(qos: .userInitiated).async {
-//                let thumbnailImage = self.getThumbnailImage(forUrl: URL(string: VideoURL)!)
-//
-//                DispatchQueue.main.async {
-//                    if (cell.tag == indexPath.section) {
-//                        cell.imageView?.image = thumbnailImage
-//                    }
-//
-//
-//
-//                }
-//              }
-            
-            
+           
+            let previewImageURL : String = dict.value(forKey: "previewImage") as! String
+            cell.HistoryImageView.sd_setImage(with: URL(string:previewImageURL), completed: nil)
             cell.layer.cornerRadius = 5
             cell.layer.masksToBounds = true
             cell.layer.borderWidth = 1

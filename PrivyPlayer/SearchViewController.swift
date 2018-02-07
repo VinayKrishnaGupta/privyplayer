@@ -51,29 +51,27 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = "Hello Vinay"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MyHistoryTableViewCell
+        
         if dataArray.count>0 {
             let dict : NSDictionary = dataArray[indexPath.section] as! NSDictionary
             let title : String = dict.value(forKeyPath: "title") as! String
-            cell.textLabel?.text = title
-           
+            cell.HistoryTitle.text = title
+            // let VideoURL: String = dict.value(forKey: "video url") as! String
+            
             let previewImageURL : String = dict.value(forKey: "previewImage") as! String
-            cell.imageView?.sd_setImage(with: URL(string:previewImageURL), completed: nil)
+            cell.HistoryImageView.sd_setImage(with: URL(string:previewImageURL), completed: nil)
             cell.layer.cornerRadius = 5
             cell.layer.masksToBounds = true
             cell.layer.borderWidth = 1
             cell.layer.borderColor = UIColor.lightGray.cgColor
             
             
-           
-
-            
-            
         }
         
         
         return cell
+    
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

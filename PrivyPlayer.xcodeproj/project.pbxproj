@@ -40,6 +40,7 @@
 		2F939B561FD7B67D005627CF /* PrivyPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F939B551FD7B67D005627CF /* PrivyPlayerTests.swift */; };
 		2F939B611FD7B67D005627CF /* PrivyPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F939B601FD7B67D005627CF /* PrivyPlayerUITests.swift */; };
 		2F939B6F1FD7C224005627CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F939B6E1FD7C223005627CF /* GoogleService-Info.plist */; };
+		2FBA82DA2025967F00B6D08C /* MyHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA82D92025967F00B6D08C /* MyHistoryTableViewCell.swift */; };
 		7A34FA87C5AE6D80B4320B85 /* Pods_PrivyPlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5890AB5332158A662DDA49D5 /* Pods_PrivyPlayerTests.framework */; };
 		A9FE2C68C203596B4FBE0DDF /* Pods_PrivyPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D2C939C6075BC66BFCB33A /* Pods_PrivyPlayer.framework */; };
 /* End PBXBuildFile section */
@@ -112,6 +113,7 @@
 		2F939B621FD7B67D005627CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F939B6E1FD7C223005627CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2F939B711FD7D53E005627CF /* ASPVideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ASPVideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FBA82D92025967F00B6D08C /* MyHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		5890AB5332158A662DDA49D5 /* Pods_PrivyPlayerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrivyPlayerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D2C939C6075BC66BFCB33A /* Pods_PrivyPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrivyPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B3099AFF7FC56183664BCD /* Pods-PrivyPlayerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrivyPlayerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrivyPlayerTests/Pods-PrivyPlayerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				2F901BDD2007CB7100BC86A5 /* CachingPlayerItem.swift */,
 				2F1815731FE101EC00EDD682 /* SearchViewController.swift */,
 				2F1815861FE3C1E800EDD682 /* MyHistoryViewController.swift */,
+				2FBA82D92025967F00B6D08C /* MyHistoryTableViewCell.swift */,
 				2F1815881FE3EBB300EDD682 /* recentuploadsViewController.swift */,
 				2F18158A1FE6A0C400EDD682 /* RequestVideoViewController.swift */,
 				2F939B471FD7B67D005627CF /* Assets.xcassets */,
@@ -573,6 +576,7 @@
 				2F15406F1FDE6ACB005519EC /* SignUpViewController.swift in Sources */,
 				2F616BCF20174BE5001074D9 /* PlayerVideoViewController.swift in Sources */,
 				2F1815741FE101EC00EDD682 /* SearchViewController.swift in Sources */,
+				2FBA82DA2025967F00B6D08C /* MyHistoryTableViewCell.swift in Sources */,
 				2F616BF42021C920001074D9 /* MyAVPlayerViewController.swift in Sources */,
 				2F1540671FDE46F3005519EC /* HomeTableViewController.swift in Sources */,
 				2F15406B1FDE479B005519EC /* TableViewCell.swift in Sources */,
@@ -754,6 +758,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = international.rst.com.gig.gs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PrivyPlayer/PrivyPlayer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
