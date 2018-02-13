@@ -1,23 +1,32 @@
 PODS:
   - Alamofire (4.5.0)
+  - ASPVideoPlayer (2.0.2)
   - Google-Mobile-Ads-SDK (7.27.0)
   - SCLAlertView (0.7.0)
   - SDWebImage (4.1.0):
     - SDWebImage/Core (= 4.1.0)
   - SDWebImage/Core (4.1.0)
+  - SideMenuController (0.2.4)
+  - SVProgressHUD (2.2.2)
 
 DEPENDENCIES:
   - Alamofire
+  - ASPVideoPlayer (~> 2.0.2)
   - Google-Mobile-Ads-SDK
   - SCLAlertView
   - SDWebImage (~> 4.0)
+  - SideMenuController
+  - SVProgressHUD
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  ASPVideoPlayer: fcfac6d210fff1cb5a43266caffe83957f01410b
   Google-Mobile-Ads-SDK: 83f7f890e638ce8f1debd440ea363338c9f6be3b
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
+  SideMenuController: b463d2b3aa58e2afe57f57a07938fa9a647894ca
+  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
 
-PODFILE CHECKSUM: af7dd3d61dc8ff0738d09a2130eb34fff1eac5f1
+PODFILE CHECKSUM: 12c5b48431457e77a0efcad9ee1ffa8ebf2a6bba
 
 COCOAPODS: 1.3.1

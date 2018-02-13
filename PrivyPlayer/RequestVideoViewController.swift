@@ -52,7 +52,7 @@ class RequestVideoViewController: UIViewController {
         else {
             let UserID : String = UserDefaults.standard.value(forKey: "UserID") as! String
             let VideoTitle : String = self.videoTitleTextField.text!
-          
+
             
             let parameter = ["video_title": VideoTitle, "user_id":UserID ]
             Alamofire.request("http://gig.gs/API_V2/API/requestVideo", method: .post, parameters: parameter, headers:nil)
@@ -66,8 +66,8 @@ class RequestVideoViewController: UIViewController {
                         let type : String = dict.value(forKeyPath: "status.type") as! String
                         if type == "Success" {
                             self.videoTitleTextField.text = nil
-                           
-                             SCLAlertView().showSuccess("Success", subTitle: "We have received your request and Notify You on video Upload")
+
+                            SCLAlertView().showSuccess("Success", subTitle: "We have received your request and Notify You on video Upload")
                             
                             
                         }
@@ -101,13 +101,13 @@ class RequestVideoViewController: UIViewController {
     
 
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
 
 }

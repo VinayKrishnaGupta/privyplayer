@@ -9,8 +9,11 @@ use_frameworks!
 pod 'Alamofire'
 pod 'SCLAlertView'
 pod 'SDWebImage', '~> 4.0'  
-#pod 'ASPVideoPlayer', '~> 2.0.2'
+pod 'ASPVideoPlayer', '~> 2.0.2'
 pod 'Google-Mobile-Ads-SDK'
+pod 'SVProgressHUD'
+pod 'SideMenuController'
+
 #pod 'VKVideoPlayer' , :git => 'https://github.com/viki-org/VKVideoPlayer'
 #pod 'ASPVideoPlayer', '~> 3.0.1'
 #pod 'JPVideoPlayer', '~> 2.4.0'

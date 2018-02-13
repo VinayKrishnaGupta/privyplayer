@@ -40,6 +40,7 @@
 		2F939B561FD7B67D005627CF /* PrivyPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F939B551FD7B67D005627CF /* PrivyPlayerTests.swift */; };
 		2F939B611FD7B67D005627CF /* PrivyPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F939B601FD7B67D005627CF /* PrivyPlayerUITests.swift */; };
 		2F939B6F1FD7C224005627CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F939B6E1FD7C223005627CF /* GoogleService-Info.plist */; };
+		2F9B19B82031870700AA3E14 /* ASPVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B19B72031870700AA3E14 /* ASPVideoViewController.swift */; };
 		2FBA82DA2025967F00B6D08C /* MyHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA82D92025967F00B6D08C /* MyHistoryTableViewCell.swift */; };
 		7A34FA87C5AE6D80B4320B85 /* Pods_PrivyPlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5890AB5332158A662DDA49D5 /* Pods_PrivyPlayerTests.framework */; };
 		A9FE2C68C203596B4FBE0DDF /* Pods_PrivyPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D2C939C6075BC66BFCB33A /* Pods_PrivyPlayer.framework */; };
@@ -113,6 +114,7 @@
 		2F939B621FD7B67D005627CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F939B6E1FD7C223005627CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2F939B711FD7D53E005627CF /* ASPVideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ASPVideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F9B19B72031870700AA3E14 /* ASPVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASPVideoViewController.swift; sourceTree = "<group>"; };
 		2FBA82D92025967F00B6D08C /* MyHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		5890AB5332158A662DDA49D5 /* Pods_PrivyPlayerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrivyPlayerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D2C939C6075BC66BFCB33A /* Pods_PrivyPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrivyPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +200,7 @@
 				2F1540701FDE6AE0005519EC /* Auth.storyboard */,
 				2F1540661FDE46F3005519EC /* HomeTableViewController.swift */,
 				2F616BCE20174BE5001074D9 /* PlayerVideoViewController.swift */,
+				2F9B19B72031870700AA3E14 /* ASPVideoViewController.swift */,
 				2F616BF32021C920001074D9 /* MyAVPlayerViewController.swift */,
 				2F901BDD2007CB7100BC86A5 /* CachingPlayerItem.swift */,
 				2F1815731FE101EC00EDD682 /* SearchViewController.swift */,
@@ -481,15 +484,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PrivyPlayer/Pods-PrivyPlayer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ASPVideoPlayer/ASPVideoPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenuController/SideMenuController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ASPVideoPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenuController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -573,6 +582,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F1815891FE3EBB300EDD682 /* recentuploadsViewController.swift in Sources */,
+				2F9B19B82031870700AA3E14 /* ASPVideoViewController.swift in Sources */,
 				2F15406F1FDE6ACB005519EC /* SignUpViewController.swift in Sources */,
 				2F616BCF20174BE5001074D9 /* PlayerVideoViewController.swift in Sources */,
 				2F1815741FE101EC00EDD682 /* SearchViewController.swift in Sources */,
@@ -781,6 +791,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = international.rst.com.gig.gs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PrivyPlayer/PrivyPlayer-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

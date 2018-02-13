@@ -11,6 +11,7 @@ import AVFoundation
 import AVKit
 import Alamofire
 import SCLAlertView
+import SVProgressHUD
 
 
 
@@ -26,7 +27,11 @@ class HomeTableViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        SVProgressHUD.show()
+        SVProgressHUD.setBackgroundColor(UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.5))
+        SVProgressHUD.setRingRadius(20)
+        SVProgressHUD.setForegroundColor(UIColor.init(red: 200/256, green: 54/256, blue: 54/256, alpha: 1))
+
         try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: [])
 
         
@@ -55,11 +60,11 @@ class HomeTableViewController: UITableViewController{
                     AppDataManager.sharedInstance.VideoResponsefromHomeAPI = dict.value(forKey: "response") as! [Any]
                     AppDataManager.sharedInstance.CategoryNameList = dict.value(forKeyPath: "response.CategoryName") as! [String]
                   
-                   
+                   SVProgressHUD.dismiss()
                     self.tableView.reloadData()
                 }
                 else {
-                    
+                    self.viewWillAppear(true)
                     print("Error")
                 }
                 
@@ -211,8 +216,9 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
         
         let PlayerType : String = SelectedVideoDict.value(forKey: "playOn") as! String
         if PlayerType == "Player" {
-            self.performSegue(withIdentifier: "myAVplayer", sender: VideoURLfromAPI)
-         //   self.playvideo(VideoURL: VideoURLfromAPI)
+         //   self.performSegue(withIdentifier: "aspplayerview", sender: VideoURLfromAPI)
+           self.performSegue(withIdentifier: "myAVplayer", sender: VideoURLfromAPI)
+
         }
         else {
             self.performSegue(withIdentifier: "playerView", sender: VideoURLfromAPI)
