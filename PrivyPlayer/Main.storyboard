@@ -37,10 +37,10 @@
                         <color key="backgroundColor" red="0.0" green="0.014140920849953158" blue="0.12767078579984947" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="130" id="dVh-Kx-8r0" customClass="TableViewCell" customModule="PrivyPlayer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="56" width="375" height="130"/>
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dVh-Kx-8r0" id="rIq-Vb-WWl">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="129"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Okc-ir-a1l">
@@ -101,7 +101,7 @@
                         <segue destination="ycN-hb-gOq" kind="show" identifier="searchVC" id="Bpe-ur-4UZ"/>
                         <segue destination="scW-c9-9Tc" kind="show" id="X2M-PJ-nPU"/>
                         <segue destination="86c-c0-sFe" kind="show" identifier="playerView" id="pxV-Ei-0ha"/>
-                        <segue destination="471-le-5fh" kind="showDetail" identifier="myAVplayer" action="showViewController:sender:" id="yOI-r4-i2Q"/>
+                        <segue destination="471-le-5fh" kind="presentation" identifier="myAVplayer" id="yOI-r4-i2Q"/>
                         <segue destination="0re-0e-S6Q" kind="show" identifier="aspplayerview" id="uLf-ZX-bxf"/>
                     </connections>
                 </tableViewController>
@@ -128,7 +128,7 @@
                                 <inset key="separatorInset" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="200" id="Gl6-pg-4fy" customClass="MyHistoryTableViewCell" customModule="PrivyPlayer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="343" height="200"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="343" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gl6-pg-4fy" id="PVH-vR-xT8">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="200"/>
@@ -186,10 +186,10 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="200" id="5TF-BC-vET" customClass="MyHistoryTableViewCell" customModule="PrivyPlayer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="343" height="200"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="343" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5TF-BC-vET" id="iaD-yl-ard">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="201"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXC-0k-Eg3">
@@ -254,7 +254,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="200" id="9Hj-hF-n0Y" customClass="MyHistoryTableViewCell" customModule="PrivyPlayer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="360" height="200"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="360" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Hj-hF-n0Y" id="RsA-Qh-N7q">
                                             <rect key="frame" x="0.0" y="0.0" width="360" height="200"/>
@@ -495,7 +495,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Video Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Up9-a9-dQX">
-                                <rect key="frame" x="16" y="20" width="343" height="29"/>
+                                <rect key="frame" x="16" y="20" width="343" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -510,7 +510,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Video Category Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GPH-jK-sVq">
-                                <rect key="frame" x="16" y="131" width="343" height="39"/>
+                                <rect key="frame" x="16" y="130" width="343" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
@@ -526,7 +526,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZq-Aa-XtT">
-                                <rect key="frame" x="16" y="274" width="343" height="44"/>
+                                <rect key="frame" x="16" y="273" width="343" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.8575797677" green="0.2286185026" blue="0.18584692480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Submit">

@@ -27,8 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = vc
             self.window?.makeKeyAndVisible()
         }
-        
-        GADMobileAds.configure(withApplicationID: "ca-app-pub-1687791729093117/8134087614")
+
+        //Production
+        //GADMobileAds.configure(withApplicationID: "ca-app-pub-1687791729093117/8134087614")
+
+        //Test
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544/2934735716")
+
         
         
         // Override point for customization after application launch.
