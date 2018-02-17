@@ -217,7 +217,9 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
         let PlayerType : String = SelectedVideoDict.value(forKey: "playOn") as! String
         if PlayerType == "Player" {
          //   self.performSegue(withIdentifier: "aspplayerview", sender: VideoURLfromAPI)
-           self.performSegue(withIdentifier: "myAVplayer", sender: VideoURLfromAPI)
+            
+            self.performSegue(withIdentifier: "videoDetail", sender: VideoURLfromAPI)
+          // self.performSegue(withIdentifier: "myAVplayer", sender: VideoURLfromAPI)
 
         }
         else {
@@ -280,6 +282,13 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
         if segue.identifier == "myAVplayer" {
             let vc = segue.destination as! MyAVPlayerViewController
             vc.videoURLfromHome = sender as! String
+        }
+        
+        if segue.identifier == "videoDetail" {
+            let vc = segue.destination as! VideoDetailViewController
+            vc.SelectedVideoObject = self.SelectedVideoDict
+            vc.VideoURL = sender as! String
+            
         }
     }
     
