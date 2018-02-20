@@ -24,6 +24,9 @@
 		2F1815891FE3EBB300EDD682 /* recentuploadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1815881FE3EBB300EDD682 /* recentuploadsViewController.swift */; };
 		2F18158B1FE6A0C400EDD682 /* RequestVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F18158A1FE6A0C400EDD682 /* RequestVideoViewController.swift */; };
 		2F587511203827D20011033B /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F587510203827D20011033B /* VideoDetailViewController.swift */; };
+		2F587515203AEE530011033B /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F587513203AEE530011033B /* SideBarViewController.swift */; };
+		2F587516203AEE530011033B /* CustomSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F587514203AEE530011033B /* CustomSideMenuViewController.swift */; };
+		2F587519203BF28E0011033B /* IntroViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F587518203BF28E0011033B /* IntroViewViewController.m */; };
 		2F616BCF20174BE5001074D9 /* PlayerVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F616BCE20174BE5001074D9 /* PlayerVideoViewController.swift */; };
 		2F616BD120174C74001074D9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F616BD020174C74001074D9 /* AVFoundation.framework */; };
 		2F616BD320174C79001074D9 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F616BD220174C79001074D9 /* AVKit.framework */; };
@@ -85,6 +88,10 @@
 		2F1815881FE3EBB300EDD682 /* recentuploadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recentuploadsViewController.swift; sourceTree = "<group>"; };
 		2F18158A1FE6A0C400EDD682 /* RequestVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestVideoViewController.swift; sourceTree = "<group>"; };
 		2F587510203827D20011033B /* VideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
+		2F587513203AEE530011033B /* SideBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
+		2F587514203AEE530011033B /* CustomSideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSideMenuViewController.swift; sourceTree = "<group>"; };
+		2F587517203BF28E0011033B /* IntroViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroViewViewController.h; sourceTree = "<group>"; };
+		2F587518203BF28E0011033B /* IntroViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroViewViewController.m; sourceTree = "<group>"; };
 		2F616BCE20174BE5001074D9 /* PlayerVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVideoViewController.swift; sourceTree = "<group>"; };
 		2F616BD020174C74001074D9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		2F616BD220174C79001074D9 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
@@ -164,6 +171,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F587512203AEE360011033B /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				2F587514203AEE530011033B /* CustomSideMenuViewController.swift */,
+				2F587513203AEE530011033B /* SideBarViewController.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 		2F939B341FD7B67C005627CF = {
 			isa = PBXGroup;
 			children = (
@@ -195,11 +211,14 @@
 				2F15406A1FDE479B005519EC /* TableViewCell.swift */,
 				2F1815791FE14A2900EDD682 /* VideoCollectionViewCell.swift */,
 				2F1540641FDAB69A005519EC /* Main.storyboard */,
+				2F587512203AEE360011033B /* SideMenu */,
 				2F1815801FE2A5A800EDD682 /* MainTabBarController.h */,
 				2F1815811FE2A5A800EDD682 /* MainTabBarController.m */,
 				2F15406C1FDE6AB7005519EC /* SignInViewController.swift */,
 				2F15406E1FDE6ACB005519EC /* SignUpViewController.swift */,
 				2F1540701FDE6AE0005519EC /* Auth.storyboard */,
+				2F587517203BF28E0011033B /* IntroViewViewController.h */,
+				2F587518203BF28E0011033B /* IntroViewViewController.m */,
 				2F1540661FDE46F3005519EC /* HomeTableViewController.swift */,
 				2F587510203827D20011033B /* VideoDetailViewController.swift */,
 				2F616BCE20174BE5001074D9 /* PlayerVideoViewController.swift */,
@@ -489,6 +508,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-PrivyPlayer/Pods-PrivyPlayer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ASPVideoPlayer/ASPVideoPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/EAIntroView/EAIntroView.framework",
+				"${BUILT_PRODUCTS_DIR}/EARestrictedScrollView/EARestrictedScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -498,6 +519,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ASPVideoPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EAIntroView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EARestrictedScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -590,9 +613,12 @@
 				2F15406F1FDE6ACB005519EC /* SignUpViewController.swift in Sources */,
 				2F616BCF20174BE5001074D9 /* PlayerVideoViewController.swift in Sources */,
 				2F1815741FE101EC00EDD682 /* SearchViewController.swift in Sources */,
+				2F587519203BF28E0011033B /* IntroViewViewController.m in Sources */,
 				2FBA82DA2025967F00B6D08C /* MyHistoryTableViewCell.swift in Sources */,
+				2F587515203AEE530011033B /* SideBarViewController.swift in Sources */,
 				2F616BF42021C920001074D9 /* MyAVPlayerViewController.swift in Sources */,
 				2F1540671FDE46F3005519EC /* HomeTableViewController.swift in Sources */,
+				2F587516203AEE530011033B /* CustomSideMenuViewController.swift in Sources */,
 				2F15406B1FDE479B005519EC /* TableViewCell.swift in Sources */,
 				2F1540691FDE4790005519EC /* Helpers.swift in Sources */,
 				2F15406D1FDE6AB7005519EC /* SignInViewController.swift in Sources */,

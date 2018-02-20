@@ -18,7 +18,7 @@ class SignInViewController: UIViewController {
         super.viewDidAppear(false)
         if UserDefaults.standard.value(forKey: "UserID") != nil {
             let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBar")
+            let vc = storyboard.instantiateViewController(withIdentifier: "customsideVC")
             self.present(vc, animated: true, completion: nil)
         }
         
@@ -80,7 +80,7 @@ class SignInViewController: UIViewController {
                         
                         SCLAlertView().showSuccess("Success", subTitle: "Successfully Logged In")
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-                        let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBar")
+                        let vc = storyboard.instantiateViewController(withIdentifier: "customsideVC")
                         self.present(vc, animated: true, completion: nil)
                     }
                     else {
@@ -109,7 +109,13 @@ class SignInViewController: UIViewController {
         self.performSegue(withIdentifier: "SignupVC", sender: self)
     }
     
-
+    @IBAction func ContinueAsGuest(_ sender: UIButton) {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "customsideVC")
+        self.present(vc, animated: true, completion: nil)
+        
+    }
+    
     /*
     // MARK: - Navigation
 

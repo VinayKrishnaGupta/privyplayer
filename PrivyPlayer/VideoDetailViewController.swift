@@ -101,6 +101,27 @@ class VideoDetailViewController: UIViewController {
             vc.videoURLfromHome = sender as! String
         }
     }
+    
+    @IBAction func shareButton(_ sender: UIButton)
+    {
+        let VideoTitle : String = self.SelectedVideoObject.value(forKeyPath: "title") as! String
+        let text = "Download gig.gs iPhone App from https://goo.gl/UvhWoz or Watch Video : " + VideoTitle + " from " + VideoURL
+        
+        // set up activity view controller
+        let textToShare = [text]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToTwitter ]
+        
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
+        
+    }
+    
+    
 
     /*
     // MARK: - Navigation

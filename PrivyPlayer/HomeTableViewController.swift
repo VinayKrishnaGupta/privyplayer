@@ -37,7 +37,11 @@ class HomeTableViewController: UITableViewController{
         
         let searchButton = UIBarButtonItem.init(image: UIImage.init(named: "searchIcon"), style: .done, target: self, action: #selector(SearchButtonMethod))
         
+        let MenuButton = UIBarButtonItem.init(image: UIImage.init(named: "menu"), style: .done, target: self, action: #selector(SideBarMethod))
+        
        self.navigationItem.rightBarButtonItem = searchButton
+       self.navigationItem.leftBarButtonItem = MenuButton
+        
         
       //  self.view.backgroundColor = UIColor(patternImage: UIImage(named: "filmreels2.png")!)
       //  self.navigationItem.rightBarButtonItems = [uploadButton, searchButton]
@@ -45,10 +49,14 @@ class HomeTableViewController: UITableViewController{
         
     }
     
+    func SideBarMethod() {
+        sideMenuController?.toggle()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        let UserID : String = UserDefaults.standard.value(forKey: "UserID") as! String
+        let UserID  = UserDefaults.standard.value(forKey: "UserID") as? String
         Alamofire.request("http://gig.gs/API_V2/API/fetchVideos", method: .post, parameters:["user_id":UserID] , headers: ["Token":"d75542712c868c1690110db641ba01a"])
             .responseJSON { response in
                 debugPrint(response)
@@ -233,7 +241,7 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
         
         
         DispatchQueue.global(qos: .userInitiated).async {
-                let userID : String = UserDefaults.standard.value(forKey: "UserID") as! String
+                let userID = UserDefaults.standard.value(forKey: "UserID")
             let VideoID : String = self.SelectedVideoDict.value(forKeyPath: "reference_id") as! String
                 let parameter  = ["userId": userID , "videoId": VideoID]
                 Alamofire.request("http://gig.gs/API_V2/API/createHistory", method: .post, parameters: parameter, headers:nil)

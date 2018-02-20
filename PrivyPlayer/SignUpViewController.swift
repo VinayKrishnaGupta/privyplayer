@@ -115,7 +115,7 @@ class SignUpViewController: UIViewController {
                         
                         SCLAlertView().showSuccess("Success", subTitle: "Successfully Logged In")
                         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-                        let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBar")
+                        let vc = storyboard.instantiateViewController(withIdentifier: "customsideVC")
                         self.present(vc, animated: true, completion: nil)
                     }
                     else {

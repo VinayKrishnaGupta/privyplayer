@@ -13,6 +13,7 @@ pod 'ASPVideoPlayer', '~> 2.0.2'
 pod 'Google-Mobile-Ads-SDK'
 pod 'SVProgressHUD'
 pod 'SideMenuController'
+pod 'EAIntroView'
 
 #pod 'VKVideoPlayer' , :git => 'https://github.com/viki-org/VKVideoPlayer'
 #pod 'ASPVideoPlayer', '~> 3.0.1'
