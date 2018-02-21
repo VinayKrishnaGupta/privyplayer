@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2F939B3C1FD7B67D005627CF"
-               BuildableName = "PrivyPlayer.app"
+               BuildableName = "gig.gs.app"
                BlueprintName = "PrivyPlayer"
                ReferencedContainer = "container:PrivyPlayer.xcodeproj">
             </BuildableReference>
@@ -54,7 +54,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2F939B3C1FD7B67D005627CF"
-            BuildableName = "PrivyPlayer.app"
+            BuildableName = "gig.gs.app"
             BlueprintName = "PrivyPlayer"
             ReferencedContainer = "container:PrivyPlayer.xcodeproj">
          </BuildableReference>
@@ -78,7 +78,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2F939B3C1FD7B67D005627CF"
-            BuildableName = "PrivyPlayer.app"
+            BuildableName = "gig.gs.app"
             BlueprintName = "PrivyPlayer"
             ReferencedContainer = "container:PrivyPlayer.xcodeproj">
          </BuildableReference>
@@ -97,7 +97,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2F939B3C1FD7B67D005627CF"
-            BuildableName = "PrivyPlayer.app"
+            BuildableName = "gig.gs.app"
             BlueprintName = "PrivyPlayer"
             ReferencedContainer = "container:PrivyPlayer.xcodeproj">
          </BuildableReference>

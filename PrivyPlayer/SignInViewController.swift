@@ -46,6 +46,7 @@ class SignInViewController: UIViewController {
             SCLAlertView().showError("Error", subTitle: "All Fields are Mandetory")
         }
         else {
+             SCLAlertView().showWait("Please Wait", subTitle: "Sigining In")
              self.SigninMethod()
         }
         
@@ -56,7 +57,7 @@ class SignInViewController: UIViewController {
     }
     
     func SigninMethod() {
-        
+       
         let username: String = self.emailTextField.text!
         let password : String = self.passwordTextField.text!
         

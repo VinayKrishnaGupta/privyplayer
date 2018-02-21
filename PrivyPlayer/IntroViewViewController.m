@@ -62,7 +62,8 @@
 
     EAIntroView *myIntroView = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1,page2,page3,page4]];
     [myIntroView setDelegate:self];
-    [myIntroView showInView:self.view animateDuration:0.3];
+    [myIntroView showInView:self.view animateDuration:3];
+   
     
     
     // Do any additional setup after loading the view.
@@ -73,9 +74,7 @@
    [self performSegueWithIdentifier:@"signUpVC" sender:nil];
 }
 
-- (void)introDidFinish:(EAIntroView *)introView wasSkipped:(BOOL)wasSkipped {
-    NSLog(@"Intro Did Finish");
-}
+
 
 
 - (void)didReceiveMemoryWarning {

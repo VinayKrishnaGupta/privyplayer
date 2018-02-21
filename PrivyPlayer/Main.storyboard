@@ -36,13 +36,13 @@
         <!--gig.gs-->
         <scene sceneID="2df-2y-fRU">
             <objects>
-                <tableViewController id="n4v-wa-sRe" customClass="HomeTableViewController" customModule="PrivyPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="n4v-wa-sRe" customClass="HomeTableViewController" customModule="gig_gs" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="130" sectionHeaderHeight="18" sectionFooterHeight="18" id="uiF-OV-nzp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.014140920849953158" blue="0.12767078579984947" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="130" id="dVh-Kx-8r0" customClass="TableViewCell" customModule="PrivyPlayer" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="130" id="dVh-Kx-8r0" customClass="TableViewCell" customModule="gig_gs" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dVh-Kx-8r0" id="rIq-Vb-WWl">
@@ -60,7 +60,7 @@
                                                 <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="b53-qX-2Jk" customClass="VideoCollectionViewCell" customModule="PrivyPlayer" customModuleProvider="target">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="b53-qX-2Jk" customClass="VideoCollectionViewCell" customModule="gig_gs" customModuleProvider="target">
                                                     <rect key="frame" x="10" y="0.0" width="160" height="120"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -119,7 +119,7 @@
         <!--My History View Controller-->
         <scene sceneID="AgZ-nS-ldn">
             <objects>
-                <viewController id="Mtf-D9-E8n" customClass="MyHistoryViewController" customModule="PrivyPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Mtf-D9-E8n" customClass="MyHistoryViewController" customModule="gig_gs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I4v-O9-lsp"/>
                         <viewControllerLayoutGuide type="bottom" id="SO0-Vq-VOr"/>
@@ -134,7 +134,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="200" id="Gl6-pg-4fy" customClass="MyHistoryTableViewCell" customModule="PrivyPlayer" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="200" id="Gl6-pg-4fy" customClass="MyHistoryTableViewCell" customModule="gig_gs" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="343" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gl6-pg-4fy" id="PVH-vR-xT8">
@@ -178,7 +178,7 @@
         <!--Recentuploads View Controller-->
         <scene sceneID="b3E-OX-kcn">
             <objects>
-                <viewController id="HWl-U7-bTC" customClass="recentuploadsViewController" customModule="PrivyPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HWl-U7-bTC" customClass="recentuploadsViewController" customModule="gig_gs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r0b-YS-Yue"/>
                         <viewControllerLayoutGuide type="bottom" id="xa6-ST-5lL"/>
@@ -192,7 +192,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="200" id="5TF-BC-vET" customClass="MyHistoryTableViewCell" customModule="PrivyPlayer" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="200" id="5TF-BC-vET" customClass="MyHistoryTableViewCell" customModule="gig_gs" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="343" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5TF-BC-vET" id="iaD-yl-ard">
@@ -207,7 +207,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gNk-sN-IeD">
-                                                    <rect key="frame" x="50" y="10" width="239" height="143"/>
+                                                    <rect key="frame" x="50" y="10" width="239" height="142"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -236,7 +236,7 @@
         <!--Search View Controller-->
         <scene sceneID="nS8-dl-Lax">
             <objects>
-                <viewController storyboardIdentifier="SearchVC" id="ycN-hb-gOq" customClass="SearchViewController" customModule="PrivyPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchVC" id="ycN-hb-gOq" customClass="SearchViewController" customModule="gig_gs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I6g-Gt-SUQ"/>
                         <viewControllerLayoutGuide type="bottom" id="0Ha-4S-FlX"/>
@@ -260,7 +260,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="200" id="9Hj-hF-n0Y" customClass="MyHistoryTableViewCell" customModule="PrivyPlayer" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="200" id="9Hj-hF-n0Y" customClass="MyHistoryTableViewCell" customModule="gig_gs" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="360" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Hj-hF-n0Y" id="RsA-Qh-N7q">
@@ -305,7 +305,7 @@
         <!--AV Player View Controller-->
         <scene sceneID="gdz-PM-zWn">
             <objects>
-                <avPlayerViewController hidesBottomBarWhenPushed="YES" videoGravity="AVLayerVideoGravityResizeAspect" id="471-le-5fh" customClass="MyAVPlayerViewController" customModule="PrivyPlayer" customModuleProvider="target" sceneMemberID="viewController"/>
+                <avPlayerViewController hidesBottomBarWhenPushed="YES" videoGravity="AVLayerVideoGravityResizeAspect" id="471-le-5fh" customClass="MyAVPlayerViewController" customModule="gig_gs" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVY-cv-WS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3526" y="367"/>
@@ -313,7 +313,7 @@
         <!--Player Video View Controller-->
         <scene sceneID="egd-Ym-UYf">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="86c-c0-sFe" customClass="PlayerVideoViewController" customModule="PrivyPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="86c-c0-sFe" customClass="PlayerVideoViewController" customModule="gig_gs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pdf-uC-XkU"/>
                         <viewControllerLayoutGuide type="bottom" id="auP-Gd-M7j"/>
@@ -372,7 +372,7 @@
         <!--Video View Controller-->
         <scene sceneID="JGF-tW-fzb">
             <objects>
-                <viewController id="0re-0e-S6Q" customClass="ASPVideoViewController" customModule="PrivyPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0re-0e-S6Q" customClass="ASPVideoViewController" customModule="gig_gs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jjm-hb-kAM"/>
                         <viewControllerLayoutGuide type="bottom" id="RIN-J1-FeZ"/>
@@ -433,6 +433,7 @@
                 <navigationController navigationBarHidden="YES" id="fw3-YW-OAZ" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="r3S-he-8fU">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.8575797677" green="0.2286185026" blue="0.18584692480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="fpJ-vr-VdS" kind="relationship" relationship="rootViewController" id="Alx-WN-GCP"/>
@@ -499,7 +500,7 @@
         <!--Request A Video-->
         <scene sceneID="ke8-CE-Nvd">
             <objects>
-                <viewController id="ZzN-8W-Xol" customClass="RequestVideoViewController" customModule="PrivyPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZzN-8W-Xol" customClass="RequestVideoViewController" customModule="gig_gs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bWZ-Ra-lJc"/>
                         <viewControllerLayoutGuide type="bottom" id="pnt-sF-q2w"/>
@@ -621,7 +622,7 @@
         <!--Video Detail View Controller-->
         <scene sceneID="JjQ-7S-ji6">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="sRO-oX-9uo" customClass="VideoDetailViewController" customModule="PrivyPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="sRO-oX-9uo" customClass="VideoDetailViewController" customModule="gig_gs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0bY-Pv-0AX"/>
                         <viewControllerLayoutGuide type="bottom" id="bbe-iI-j3q"/>
@@ -631,15 +632,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ljp-3v-19J">
-                                <rect key="frame" x="16" y="79" width="343" height="185"/>
+                                <rect key="frame" x="16" y="79" width="343" height="184"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="playvideoframe" translatesAutoresizingMaskIntoConstraints="NO" id="X9W-a7-rJ8">
-                                <rect key="frame" x="16" y="79" width="343" height="185"/>
+                                <rect key="frame" x="16" y="79" width="343" height="184"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F72-Qa-nD8">
-                                <rect key="frame" x="16" y="351" width="343" height="20"/>
+                                <rect key="frame" x="16" y="351" width="343" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -654,7 +655,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ww-3l-cCD">
-                                <rect key="frame" x="16" y="294" width="90" height="40"/>
+                                <rect key="frame" x="16" y="293" width="90" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.8575797677" green="0.2286185026" blue="0.18584692480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
@@ -672,7 +673,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfq-nj-ma7">
-                                <rect key="frame" x="142" y="294" width="90" height="40"/>
+                                <rect key="frame" x="142" y="293" width="90" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.8575797677" green="0.2286185026" blue="0.18584692480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
@@ -687,7 +688,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mj0-z7-Bdk">
-                                <rect key="frame" x="16" y="379" width="343" height="101"/>
+                                <rect key="frame" x="16" y="379" width="343" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -695,7 +696,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugc-Jw-yRP">
-                                <rect key="frame" x="269" y="294" width="90" height="40"/>
+                                <rect key="frame" x="269" y="293" width="90" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.8575797677" green="0.2286185026" blue="0.18584692480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
@@ -729,7 +730,7 @@
         <!--Custom Side Menu View Controller-->
         <scene sceneID="C8d-Nd-9EK">
             <objects>
-                <viewController storyboardIdentifier="customsideVC" id="3ax-49-TOO" customClass="CustomSideMenuViewController" customModule="PrivyPlayer" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="customsideVC" id="3ax-49-TOO" customClass="CustomSideMenuViewController" customModule="gig_gs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TN3-oX-yse">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -749,7 +750,7 @@
         <!--Side Bar View Controller-->
         <scene sceneID="8of-zq-8oB">
             <objects>
-                <viewController id="Ewc-Or-OIX" customClass="SideBarViewController" customModule="PrivyPlayer" sceneMemberID="viewController">
+                <viewController id="Ewc-Or-OIX" customClass="SideBarViewController" customModule="gig_gs" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aZ9-Fa-5rc"/>
                         <viewControllerLayoutGuide type="bottom" id="cXp-sa-gbq"/>
@@ -811,7 +812,7 @@
         <image name="recentuploadicon" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5eL-YK-vbu"/>
+        <segue reference="hBj-b9-iGt"/>
         <segue reference="uFx-4X-asO"/>
     </inferredMetricsTieBreakers>
 </document>

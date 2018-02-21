@@ -22,7 +22,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Cuw-Kc-h7j"/>
                     <connections>
-                        <segue destination="t14-hM-qQI" kind="presentation" identifier="signUpVC" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="aFG-RX-yBL"/>
+                        <segue destination="t14-hM-qQI" kind="showDetail" identifier="signUpVC" id="aFG-RX-yBL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xZx-oz-o11" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -32,7 +32,7 @@
         <!--gig.gs Account-->
         <scene sceneID="mbl-M9-ZfL">
             <objects>
-                <viewController id="UF6-H2-eEG" customClass="SignInViewController" customModule="PrivyPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UF6-H2-eEG" customClass="SignInViewController" customModule="gig_gs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NLB-Y6-227">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,7 +84,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qnb-6Y-bjr">
-                                <rect key="frame" x="16" y="403" width="343" height="27"/>
+                                <rect key="frame" x="16" y="402" width="343" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Don't Have an account, Request one">
@@ -123,7 +123,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="0FV-A4-2hB">
             <objects>
-                <viewController id="vPv-Og-5xY" customClass="SignUpViewController" customModule="PrivyPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vPv-Og-5xY" customClass="SignUpViewController" customModule="gig_gs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RQu-DW-4CO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,7 +136,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter your Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hSV-xC-zbf">
-                                <rect key="frame" x="16" y="221" width="343" height="49"/>
+                                <rect key="frame" x="16" y="221" width="343" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
@@ -182,14 +182,14 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6o-k9-Jb0">
-                                <rect key="frame" x="16" y="298" width="343" height="19"/>
+                                <rect key="frame" x="16" y="297" width="343" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUA-CN-Dcw">
-                                <rect key="frame" x="16" y="440" width="343" height="51"/>
+                                <rect key="frame" x="16" y="439" width="343" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.8575797677" green="0.2286185026" blue="0.18584692480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Continue">

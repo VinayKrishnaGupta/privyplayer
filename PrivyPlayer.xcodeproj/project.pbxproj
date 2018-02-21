@@ -110,7 +110,7 @@
 		2F616BF0201763B9001074D9 /* VKVideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VKVideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F616BF32021C920001074D9 /* MyAVPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAVPlayerViewController.swift; sourceTree = "<group>"; };
 		2F901BDD2007CB7100BC86A5 /* CachingPlayerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachingPlayerItem.swift; sourceTree = "<group>"; };
-		2F939B3D1FD7B67D005627CF /* PrivyPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivyPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F939B3D1FD7B67D005627CF /* gig.gs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gig.gs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F939B401FD7B67D005627CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F939B471FD7B67D005627CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F939B4A1FD7B67D005627CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 		2F939B3E1FD7B67D005627CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2F939B3D1FD7B67D005627CF /* PrivyPlayer.app */,
+				2F939B3D1FD7B67D005627CF /* gig.gs.app */,
 				2F939B511FD7B67D005627CF /* PrivyPlayerTests.xctest */,
 				2F939B5C1FD7B67D005627CF /* PrivyPlayerUITests.xctest */,
 			);
@@ -317,7 +317,7 @@
 			);
 			name = PrivyPlayer;
 			productName = PrivyPlayer;
-			productReference = 2F939B3D1FD7B67D005627CF /* PrivyPlayer.app */;
+			productReference = 2F939B3D1FD7B67D005627CF /* gig.gs.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2F939B501FD7B67D005627CF /* PrivyPlayerTests */ = {
@@ -797,8 +797,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = international.rst.com.gig.gs;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e1d55b69-58e8-493a-baa3-ab748f641806";
+				PRODUCT_NAME = gig.gs;
+				PROVISIONING_PROFILE = "dd84639f-7682-4d1b-a79d-ed19e1aedcfc";
 				PROVISIONING_PROFILE_SPECIFIER = development;
 				SWIFT_OBJC_BRIDGING_HEADER = "PrivyPlayer/PrivyPlayer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -820,7 +820,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = international.rst.com.gig.gs;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = gig.gs;
 				PROVISIONING_PROFILE = "86d55052-19fc-4529-9c27-075da3b32db5";
 				PROVISIONING_PROFILE_SPECIFIER = "App Store Distribution";
 				SWIFT_OBJC_BRIDGING_HEADER = "PrivyPlayer/PrivyPlayer-Bridging-Header.h";
