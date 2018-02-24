@@ -46,6 +46,9 @@
 		2F939B6F1FD7C224005627CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F939B6E1FD7C223005627CF /* GoogleService-Info.plist */; };
 		2F9B19B82031870700AA3E14 /* ASPVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B19B72031870700AA3E14 /* ASPVideoViewController.swift */; };
 		2FBA82DA2025967F00B6D08C /* MyHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA82D92025967F00B6D08C /* MyHistoryTableViewCell.swift */; };
+		2FCDCD39203ED2BD00F4C9DF /* MyLikedVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCDCD38203ED2BD00F4C9DF /* MyLikedVideoViewController.swift */; };
+		2FCDCD3B203FE21000F4C9DF /* UploadVideos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FCDCD3A203FE21000F4C9DF /* UploadVideos.storyboard */; };
+		2FCDCD3E203FE24100F4C9DF /* UploadVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCDCD3D203FE24100F4C9DF /* UploadVideoViewController.swift */; };
 		7A34FA87C5AE6D80B4320B85 /* Pods_PrivyPlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5890AB5332158A662DDA49D5 /* Pods_PrivyPlayerTests.framework */; };
 		A9FE2C68C203596B4FBE0DDF /* Pods_PrivyPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D2C939C6075BC66BFCB33A /* Pods_PrivyPlayer.framework */; };
 /* End PBXBuildFile section */
@@ -125,6 +128,9 @@
 		2F939B711FD7D53E005627CF /* ASPVideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ASPVideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F9B19B72031870700AA3E14 /* ASPVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASPVideoViewController.swift; sourceTree = "<group>"; };
 		2FBA82D92025967F00B6D08C /* MyHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		2FCDCD38203ED2BD00F4C9DF /* MyLikedVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLikedVideoViewController.swift; sourceTree = "<group>"; };
+		2FCDCD3A203FE21000F4C9DF /* UploadVideos.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UploadVideos.storyboard; sourceTree = "<group>"; };
+		2FCDCD3D203FE24100F4C9DF /* UploadVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoViewController.swift; sourceTree = "<group>"; };
 		5890AB5332158A662DDA49D5 /* Pods_PrivyPlayerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrivyPlayerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D2C939C6075BC66BFCB33A /* Pods_PrivyPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrivyPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B3099AFF7FC56183664BCD /* Pods-PrivyPlayerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrivyPlayerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrivyPlayerTests/Pods-PrivyPlayerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +217,7 @@
 				2F15406A1FDE479B005519EC /* TableViewCell.swift */,
 				2F1815791FE14A2900EDD682 /* VideoCollectionViewCell.swift */,
 				2F1540641FDAB69A005519EC /* Main.storyboard */,
+				2FCDCD3C203FE22600F4C9DF /* Upload */,
 				2F587512203AEE360011033B /* SideMenu */,
 				2F1815801FE2A5A800EDD682 /* MainTabBarController.h */,
 				2F1815811FE2A5A800EDD682 /* MainTabBarController.m */,
@@ -230,6 +237,7 @@
 				2FBA82D92025967F00B6D08C /* MyHistoryTableViewCell.swift */,
 				2F1815881FE3EBB300EDD682 /* recentuploadsViewController.swift */,
 				2F18158A1FE6A0C400EDD682 /* RequestVideoViewController.swift */,
+				2FCDCD38203ED2BD00F4C9DF /* MyLikedVideoViewController.swift */,
 				2F939B471FD7B67D005627CF /* Assets.xcassets */,
 				2F939B491FD7B67D005627CF /* LaunchScreen.storyboard */,
 				2F939B4C1FD7B67D005627CF /* Info.plist */,
@@ -255,6 +263,15 @@
 				2F939B621FD7B67D005627CF /* Info.plist */,
 			);
 			path = PrivyPlayerUITests;
+			sourceTree = "<group>";
+		};
+		2FCDCD3C203FE22600F4C9DF /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				2FCDCD3A203FE21000F4C9DF /* UploadVideos.storyboard */,
+				2FCDCD3D203FE24100F4C9DF /* UploadVideoViewController.swift */,
+			);
+			path = Upload;
 			sourceTree = "<group>";
 		};
 		3526EBB2D774961860F6AADC /* Frameworks */ = {
@@ -375,7 +392,7 @@
 					2F939B3C1FD7B67D005627CF = {
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 0910;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					2F939B501FD7B67D005627CF = {
 						CreatedOnToolsVersion = 9.1;
@@ -417,6 +434,7 @@
 				2F939B4B1FD7B67D005627CF /* LaunchScreen.storyboard in Resources */,
 				2F939B481FD7B67D005627CF /* Assets.xcassets in Resources */,
 				2F1540711FDE6AE0005519EC /* Auth.storyboard in Resources */,
+				2FCDCD3B203FE21000F4C9DF /* UploadVideos.storyboard in Resources */,
 				2F939B6F1FD7C224005627CF /* GoogleService-Info.plist in Resources */,
 				2F1540651FDAB69A005519EC /* Main.storyboard in Resources */,
 			);
@@ -620,6 +638,8 @@
 				2F1540671FDE46F3005519EC /* HomeTableViewController.swift in Sources */,
 				2F587516203AEE530011033B /* CustomSideMenuViewController.swift in Sources */,
 				2F15406B1FDE479B005519EC /* TableViewCell.swift in Sources */,
+				2FCDCD3E203FE24100F4C9DF /* UploadVideoViewController.swift in Sources */,
+				2FCDCD39203ED2BD00F4C9DF /* MyLikedVideoViewController.swift in Sources */,
 				2F1540691FDE4790005519EC /* Helpers.swift in Sources */,
 				2F15406D1FDE6AB7005519EC /* SignInViewController.swift in Sources */,
 				2F1815821FE2A5A800EDD682 /* MainTabBarController.m in Sources */,
@@ -791,15 +811,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 32FNS63J4U;
 				INFOPLIST_FILE = PrivyPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = international.rst.com.gig.gs;
 				PRODUCT_NAME = gig.gs;
-				PROVISIONING_PROFILE = "dd84639f-7682-4d1b-a79d-ed19e1aedcfc";
-				PROVISIONING_PROFILE_SPECIFIER = development;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PrivyPlayer/PrivyPlayer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -813,16 +833,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 32FNS63J4U;
 				INFOPLIST_FILE = PrivyPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = international.rst.com.gig.gs;
 				PRODUCT_NAME = gig.gs;
-				PROVISIONING_PROFILE = "86d55052-19fc-4529-9c27-075da3b32db5";
-				PROVISIONING_PROFILE_SPECIFIER = "App Store Distribution";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PrivyPlayer/PrivyPlayer-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

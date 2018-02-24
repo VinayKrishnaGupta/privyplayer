@@ -1,42 +1,30 @@
 //
-//  SearchViewController.swift
+//  MyLikedVideoViewController.swift
 //  PrivyPlayer
 //
-//  Created by RSTI E-Services on 13/12/17.
-//  Copyright © 2017 RSTI E-Services. All rights reserved.
+//  Created by RSTI E-Services on 22/02/18.
+//  Copyright © 2018 RSTI E-Services. All rights reserved.
 //
 
 import UIKit
-import Alamofire
 import AVFoundation
 import AVKit
-import GoogleMobileAds
+import Alamofire
 import SCLAlertView
-import SDWebImage
 
-class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, GADInterstitialDelegate {
-    @IBOutlet weak var searchBar: UISearchBar!
+class MyLikedVideoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
-     var interstitial: GADInterstitial!
-    
-    var is_searching = Bool()
     var dataArray = Array<Any>()
-    var searchingDataArray = NSMutableArray()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        searchBar.delegate = self
-       self.navigationItem.title = "Search"
-        tableView.isHidden = true
-          try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: [])
-     
+        self.navigationItem.title = "Liked Video"
         self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 200/256, green: 54/256, blue: 54/256, alpha: 1)
-         let backButton : UIBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "Back_Button"), style: UIBarButtonItemStyle.done, target: self, action: #selector(BackButtonmethod))
+        let backButton : UIBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "Back_Button"), style: UIBarButtonItemStyle.done, target: self, action: #selector(BackButtonmethod))
         self.navigationItem.leftBarButtonItem = backButton
-
+        
     }
     
     func BackButtonmethod() {
@@ -44,9 +32,24 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         self.navigationController?.popToRootViewController(animated: true)
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.GetHistory()
+        
+        let searchButton = UIBarButtonItem.init(image: UIImage.init(named: "searchIcon"), style: .done, target: self, action: #selector(SearchButtonMethod))
+        self.navigationItem.rightBarButtonItem = searchButton
+        
+    }
+    func SearchButtonMethod(){
+        // self.performSegue(withIdentifier: "searchVC", sender: self)
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SearchVC")
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+    }
     
-  
- 
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         if dataArray.count>0 {
             return dataArray.count
@@ -80,53 +83,48 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         
         
         return cell
-    
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dict : NSDictionary = dataArray[indexPath.section] as! NSDictionary
         let VideoURLArray : Array<String> = dict.value(forKey: "url") as! Array<String>
         let VideoURL: String = VideoURLArray.last!
-         self.performSegue(withIdentifier: "myAVplayer", sender: VideoURL)
-        
+        self.playvideo(VideoURL: VideoURL)
         
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "myAVplayer" {
-            let vc = segue.destination as! MyAVPlayerViewController
-            vc.videoURLfromHome = sender as! String
+    
+    //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
+    //        if (searchBar.text?.isEmpty)!{
+    //            is_searching = false
+    //            tableView.reloadData()
+    //        } else {
+    //
+    //            print(searchBar.text)
+    //
+    //            is_searching = true
+    //            searchingDataArray.removeAllObjects()
+    //
+    //            tableView.reloadData()
+    //        }
+    //    }
+    
+    
+    
+    func GetHistory() {
+        
+        let userID = UserDefaults.standard.value(forKey: "UserID") as? String
+        if (userID == "0") {
+            print("You Are Not Logged In")
+            DispatchQueue.main.async
+                {
+                    SCLAlertView().showError("Guest", subTitle: "You Are not Logged In, Please Login to use this feature")
+            }
+            return
         }
-    }
-    
-    
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
-//        if (searchBar.text?.isEmpty)!{
-//            is_searching = false
-//            tableView.reloadData()
-//        } else {
-//
-//            print(searchBar.text)
-//
-//            is_searching = true
-//            searchingDataArray.removeAllObjects()
-//
-//            tableView.reloadData()
-//        }
-//    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        print("Search Button Clicked")
-        self.searchButtonMethod()
-    }
-    
-    func searchButtonMethod() {
-        
-        let searchquery : String = self.searchBar.text!
-        let UserID : String = UserDefaults.standard.value(forKey: "UserID") as! String
-        Alamofire.request("http://gig.gs/API_V2/API/searchResult", method: .post, parameters: ["search":searchquery,"user_id":UserID], headers:nil)
+       
+        Alamofire.request("http://gig.gs/API_V2/API/getFavourite", method: .post, parameters: ["user_id":userID!], headers:nil)
             .responseJSON { response in
                 debugPrint(response)
                 
@@ -141,19 +139,18 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                         let responseDict : NSDictionary = responseArray.first as! NSDictionary
                         self.dataArray = responseDict.value(forKey: "videos") as! [Any]
                         
-                          self.tableView.isHidden = false
-                          self.tableView.reloadData()
+                        self.tableView.isHidden = false
+                        self.tableView.reloadData()
                     }
                     else {
                         print("No Video found")
-                        SCLAlertView().showError("No Video Found", subTitle: "Please Try Something Else or Let Us Know in Request Section")
                         self.tableView.isHidden = true
                         
                     }
                     
                     
                     
-                  
+                    
                 }
                 else {
                     
@@ -177,16 +174,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         playerViewController.player = player
         self.present(playerViewController, animated: true) {
             playerViewController.player!.play()
-            
-            if self.interstitial.isReady {
-                playerViewController.player!.pause()
-                self.interstitial.present(fromRootViewController: playerViewController)
-                //self.interstitial.present(fromRootViewController: self)
-            } else {
-                print("Ad wasn't ready")
-                
-                
-            }
         }
         
     }
@@ -214,15 +201,18 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
+
+
+

@@ -16,7 +16,12 @@ class SignInViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
-        if UserDefaults.standard.value(forKey: "UserID") != nil {
+        
+        if (UserDefaults.standard.value(forKey: "UserID") != nil) {
+            let userID = UserDefaults.standard.value(forKey: "UserID") as? String
+            if (userID == "0") {
+                return
+            }
             let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "customsideVC")
             self.present(vc, animated: true, completion: nil)
@@ -27,6 +32,7 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 200/256, green: 54/256, blue: 54/256, alpha: 1)
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -114,6 +120,9 @@ class SignInViewController: UIViewController {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "customsideVC")
         self.present(vc, animated: true, completion: nil)
+        let userID = "0"
+        UserDefaults.standard.set(userID, forKey: "UserID")
+        UserDefaults.standard.synchronize()
         
     }
     

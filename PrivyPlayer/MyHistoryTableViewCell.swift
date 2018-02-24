@@ -24,8 +24,9 @@ class MyHistoryTableViewCell: UITableViewCell {
     }
     override func layoutSubviews() {
         HistoryImageView.layer.cornerRadius = 5
-//        HistoryImageView.layer.borderColor = UIColor.white.cgColor
-//        HistoryImageView.layer.borderWidth = 1
+        HistoryImageView.layer.borderColor = UIColor.darkGray.cgColor
+        HistoryImageView.layer.borderWidth = 1
+       
         HistoryImageView.layer.masksToBounds = true
     }
 

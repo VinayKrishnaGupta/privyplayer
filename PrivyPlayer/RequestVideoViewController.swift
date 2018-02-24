@@ -24,8 +24,17 @@ class RequestVideoViewController: UIViewController {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 200/256, green: 54/256, blue: 54/256, alpha: 1)
+        let backButton : UIBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "Back_Button"), style: UIBarButtonItemStyle.done, target: self, action: #selector(BackButtonmethod))
+        self.navigationItem.leftBarButtonItem = backButton
+        
     }
     
+    func BackButtonmethod() {
+        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
+        
+    }
     
     func dismissKeyboard() {
         view.endEditing(true)
@@ -45,9 +54,14 @@ class RequestVideoViewController: UIViewController {
     }
     
     func SubmitButtonMethod(){
-        
-        if (videoTitleTextField.text?.isEmpty)! {
-            print("All Fields are Mandetory")
+        let userID = UserDefaults.standard.value(forKey: "UserID") as? String
+        if (userID == "0") {
+            print("You Are Not Logged In")
+            DispatchQueue.main.async
+                {
+                    SCLAlertView().showError("Guest", subTitle: "You Are not Logged In, Please Login to use this feature")
+            }
+            return
         }
         else {
             let UserID : String = UserDefaults.standard.value(forKey: "UserID") as! String

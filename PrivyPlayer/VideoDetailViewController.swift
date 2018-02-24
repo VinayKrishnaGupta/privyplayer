@@ -8,6 +8,8 @@
 
 import UIKit
 import GoogleMobileAds
+import Alamofire
+import SCLAlertView
 
 class VideoDetailViewController: UIViewController {
     public var VideoURL = String()
@@ -21,21 +23,21 @@ class VideoDetailViewController: UIViewController {
     @IBOutlet var descriptionTitle: UILabel!
     
     var bannerView: GADBannerView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
         //        //ProductionID
-        //       // bannerView.adUnitID = "ca-app-pub-1687791729093117/8134087614"
+                bannerView.adUnitID = "ca-app-pub-1687791729093117/8134087614"
         //        //TestID
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+      //  bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         addBannerViewToView(bannerView)
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -69,7 +71,7 @@ class VideoDetailViewController: UIViewController {
             descriptionTitle.isHidden = false
         }
         
-       
+        
         
         let VideoImageURl : String = self.SelectedVideoObject.value(forKeyPath: "previewImage") as! String
         videoImageView.sd_setImage(with: URL(string:VideoImageURl), completed: nil)
@@ -77,16 +79,16 @@ class VideoDetailViewController: UIViewController {
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(MoveToPlayVideoVC))
         overLayImage.addGestureRecognizer(tap)
         overLayImage.isUserInteractionEnabled = true
-      
         
-   
         
-//        let overlayImageView = UIImageView.init(image: UIImage.init(named: "filmreels"))
-//        overlayImageView.frame = videoImageView.frame
-//        overlayImageView.clipsToBounds = true
-//        overlayImageView.alpha = 0.5
-//
-//        videoImageView.addSubview(overlayImageView)
+        
+        
+        //        let overlayImageView = UIImageView.init(image: UIImage.init(named: "filmreels"))
+        //        overlayImageView.frame = videoImageView.frame
+        //        overlayImageView.clipsToBounds = true
+        //        overlayImageView.alpha = 0.5
+        //
+        //        videoImageView.addSubview(overlayImageView)
     }
     func MoveToPlayVideoVC () {
         print("Play Video Pressed")
@@ -104,6 +106,15 @@ class VideoDetailViewController: UIViewController {
     
     @IBAction func shareButton(_ sender: UIButton)
     {
+        let userID = UserDefaults.standard.value(forKey: "UserID") as? String
+        if (userID == "0") {
+            print("You Are Not Logged In")
+            DispatchQueue.main.async
+                {
+                    SCLAlertView().showError("Guest", subTitle: "You Are not Logged In, Please Login to use this feature")
+            }
+            return
+        }
         let VideoTitle : String = self.SelectedVideoObject.value(forKeyPath: "title") as! String
         let text = "Download gig.gs iPhone App from https://goo.gl/UvhWoz or Watch Video : " + VideoTitle + " from " + VideoURL
         
@@ -121,18 +132,70 @@ class VideoDetailViewController: UIViewController {
         
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func AddToFavoriteButton(_ sender: UIButton)
+    {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let userID = UserDefaults.standard.value(forKey: "UserID") as? String
+            if (userID == "0") {
+                print("You Are Not Logged In")
+                DispatchQueue.main.async
+                    {
+                        SCLAlertView().showError("Guest", subTitle: "You Are not Logged In, Please Login to use this feature")
+                }
+                return
+            }
+            let VideoID : String = self.SelectedVideoObject.value(forKeyPath: "reference_id") as! String
+            let parameter  = ["userId": userID! , "videoId": VideoID]
+            Alamofire.request("http://gig.gs/API_V2/API/setFavourite", method: .post, parameters: parameter, headers:nil)
+                .responseJSON { response in
+                    debugPrint(response)
+                    if let json = response.result.value
+                    {
+                        let dict = json as! NSDictionary
+                        print(dict)
+                        DispatchQueue.main.async {
+                            SCLAlertView().showSuccess("Added Successfully", subTitle: "Video Added in Your Favorite List")
+                        }
+                        
+                    }
+                    else
+                    {
+                        print("Error")
+                    }
+            }
+            
+        }
     }
-    */
-
+    
+    @IBAction func CommentButton(_ sender: UIButton) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let userID = UserDefaults.standard.value(forKey: "UserID") as? String
+            if (userID == "0")
+            {
+                print("You Are Not Logged In")
+                DispatchQueue.main.async
+                {
+                    SCLAlertView().showError("Guest", subTitle: "You Are not Logged In, Please Login to use this feature")
+                }
+                return
+            }
+            DispatchQueue.main.async
+            {
+                    SCLAlertView().showInfo("Coming Soon", subTitle: "This Feature is Not available temporarily")
+            }
+        }
+    }
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 

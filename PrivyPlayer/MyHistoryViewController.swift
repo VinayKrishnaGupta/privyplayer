@@ -22,7 +22,16 @@ class MyHistoryViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.dataSource = self
         tableView.delegate = self
         self.navigationItem.title = "My History"
-        // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 200/256, green: 54/256, blue: 54/256, alpha: 1)
+        let backButton : UIBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "Back_Button"), style: UIBarButtonItemStyle.done, target: self, action: #selector(BackButtonmethod))
+        self.navigationItem.leftBarButtonItem = backButton
+        
+    }
+    
+    func BackButtonmethod() {
+        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -105,10 +114,17 @@ class MyHistoryViewController: UIViewController, UITableViewDataSource, UITableV
     
     
     func GetHistory() {
+        let userID = UserDefaults.standard.value(forKey: "UserID") as? String
+        if (userID == "0") {
+            print("You Are Not Logged In")
+            DispatchQueue.main.async
+                {
+                    SCLAlertView().showError("Guest", subTitle: "You Are not Logged In, Please Login to use this feature")
+            }
+            return
+        }
         
-        let userID : String = UserDefaults.standard.value(forKey: "UserID") as! String
-        
-        Alamofire.request("http://gig.gs/API_V2/API/getHistory", method: .post, parameters: ["user_id":userID], headers:nil)
+        Alamofire.request("http://gig.gs/API_V2/API/getHistory", method: .post, parameters: ["user_id":userID!], headers:nil)
             .responseJSON { response in
                 debugPrint(response)
                 

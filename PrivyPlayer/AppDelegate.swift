@@ -29,10 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         //Production
-        //GADMobileAds.configure(withApplicationID: "ca-app-pub-1687791729093117/8134087614")
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-1687791729093117/8134087614")
 
         //Test
-        GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544/2934735716")
+       // GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544/2934735716")
 
         
         

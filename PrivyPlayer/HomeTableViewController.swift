@@ -38,13 +38,14 @@ class HomeTableViewController: UITableViewController{
         let searchButton = UIBarButtonItem.init(image: UIImage.init(named: "searchIcon"), style: .done, target: self, action: #selector(SearchButtonMethod))
         
         let MenuButton = UIBarButtonItem.init(image: UIImage.init(named: "menu"), style: .done, target: self, action: #selector(SideBarMethod))
+        let uploadButton = UIBarButtonItem.init(image: UIImage.init(named: "videoUpload"), style: .done, target: self, action: #selector(upLoadButtonMethod))
         
-       self.navigationItem.rightBarButtonItem = searchButton
+      // self.navigationItem.rightBarButtonItem = searchButton
        self.navigationItem.leftBarButtonItem = MenuButton
         
         
       //  self.view.backgroundColor = UIColor(patternImage: UIImage(named: "filmreels2.png")!)
-      //  self.navigationItem.rightBarButtonItems = [uploadButton, searchButton]
+       self.navigationItem.rightBarButtonItems = [uploadButton, searchButton]
     
         
     }
@@ -57,7 +58,7 @@ class HomeTableViewController: UITableViewController{
         super.viewWillAppear(true)
         
         let UserID  = UserDefaults.standard.value(forKey: "UserID") as? String
-        Alamofire.request("http://gig.gs/API_V2/API/fetchVideos", method: .post, parameters:["user_id":UserID] , headers: ["Token":"d75542712c868c1690110db641ba01a"])
+        Alamofire.request("http://gig.gs/API_V2/API/fetchVideos", method: .post, parameters:["user_id":UserID as Any] , headers: ["Token":"d75542712c868c1690110db641ba01a"])
             .responseJSON { response in
                 debugPrint(response)
                 
@@ -92,7 +93,14 @@ class HomeTableViewController: UITableViewController{
         
     }
     func upLoadButtonMethod(){
-        print("uploadButton")
+        let storyboard = UIStoryboard.init(name: "UploadVideos", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "UploadVideoVC")
+        let aObjNavi = UINavigationController(rootViewController: vc)
+        aObjNavi.navigationBar.isTranslucent = false
+        aObjNavi.navigationBar.tintColor = UIColor.white
+        aObjNavi.navigationItem.title = "Upload Video"
+        aObjNavi.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        self.present(aObjNavi, animated: true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

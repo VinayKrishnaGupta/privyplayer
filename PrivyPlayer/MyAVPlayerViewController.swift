@@ -20,9 +20,9 @@ class MyAVPlayerViewController: AVPlayerViewController {
      
        bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
 //        //ProductionID
-//       // bannerView.adUnitID = "ca-app-pub-1687791729093117/8134087614"
+       bannerView.adUnitID = "ca-app-pub-1687791729093117/8134087614"
 //        //TestID
-       bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+   //    bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
        bannerView.rootViewController = self
         bannerView.load(GADRequest())
         addBannerViewToView2(bannerView)

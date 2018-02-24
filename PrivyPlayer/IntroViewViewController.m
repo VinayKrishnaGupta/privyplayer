@@ -51,8 +51,8 @@
 
     
     EAIntroPage *page4 = [EAIntroPage page];
-    page4.title = @"Upload Unlimited Videos Free";
-    page4.desc = @"Upload Some Videos to Share With World";
+    page4.title = @"Add Video To Favorite";
+    page4.desc = @"Save Now and Watch Later";
     page4.descFont = [UIFont fontWithName:@"Georgia-Italic" size:18];
     //page4.bgImage = [UIImage imageNamed:@"VideoIcon"];
     page4.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"4"]];
